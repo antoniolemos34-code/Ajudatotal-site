@@ -3,93 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJUDATOTAL.JE – Apoio à Saúde Mental e Bem-Estar</title>
 
-  <title>AjudaTotal Jersey – Terapias Holísticas & Apoio Emocional</title>
-  <meta name="description" content="AjudaTotal em Jersey – terapias holísticas, apoio emocional e bem-estar para quem precisa de equilíbrio na mente e no corpo. Sessões presenciais e online.">
+  <meta name="description" content="AJUDATOTAL.JE oferece apoio estruturado para saúde mental e bem-estar emocional. Coaching e acompanhamento para ansiedade, stress, autoestima e relações, em formato online ou presencial.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --ajuda-bg: #0f172a;
-      --ajuda-card: #111827;
-      --ajuda-soft: #e0f2fe;
-      --ajuda-accent: #22c55e;
-      --ajuda-accent-soft: rgba(34, 197, 94, 0.12);
-      --ajuda-text: #e5e7eb;
-      --ajuda-muted: #9ca3af;
-      --ajuda-border: #1f2937;
-      --radius-lg: 20px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.55);
+      --primary: #1a73e8;      /* azul Google */
+      --primary-dark: #1557b0;
+      --primary-soft: #e8f0fe;
+      --text-main: #202124;
+      --text-muted: #5f6368;
+      --bg: #ffffff;
+      --bg-alt: #f5f7fb;
+      --border: #dadce0;
+      --radius: 16px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #020617 100%);
-      color: var(--ajuda-text);
-      line-height: 1.6;
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* HEADER / NAV */
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to right, rgba(15,23,42,0.92), rgba(15,23,42,0.85));
-      border-bottom: 1px solid rgba(148,163,184,0.25);
+      z-index: 20;
+      background: rgba(255,255,255,0.98);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
-    .nav-inner {
-      max-width: 1120px;
+    .nav {
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 12px 18px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
     }
 
-    .logo {
+    .brand {
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: 600;
     }
 
-    .logo-mark {
-      width: 34px;
-      height: 34px;
+    .brand-mark {
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #a5f3fc, #22c55e 40%, #0f766e 80%);
-      box-shadow: 0 0 25px rgba(34,197,94,0.7);
+      background: var(--primary-soft);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      color: var(--primary);
+      font-size: 1rem;
       font-weight: 700;
-      color: #0b1120;
-    }
-
-    .logo-text-title {
-      font-weight: 600;
-      font-size: 1.15rem;
-    }
-
-    .logo-text-sub {
-      font-size: 0.7rem;
-      color: var(--ajuda-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
     }
 
     nav ul {
@@ -100,952 +83,510 @@
     }
 
     nav a {
-      color: var(--ajuda-muted);
-      padding: 6px 10px;
-      border-radius: var(--radius-pill);
-      transition: 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #f9fafb;
-      background: rgba(15,23,42,0.85);
-    }
-
-    .nav-cta {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .btn-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(34,197,94,0.5);
-      background: radial-gradient(circle at top left, rgba(34,197,94,0.28), rgba(15,23,42,0.95));
-      color: #ecfdf5;
-      font-size: 0.85rem;
+      color: var(--text-muted);
       font-weight: 500;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
-      white-space: nowrap;
     }
 
-    .btn-whatsapp:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 45px rgba(22, 163, 74, 0.55);
-      background: radial-gradient(circle at top left, rgba(34,197,94,0.42), rgba(15,23,42,0.95));
-    }
+    nav a:hover { color: var(--primary); }
 
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 7px 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148,163,184,0.6);
-      font-size: 0.8rem;
-      color: var(--ajuda-muted);
-      background: rgba(15,23,42,0.8);
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .btn-outline:hover {
-      border-color: rgba(148,163,184,0.9);
-      color: #e5e7eb;
-      background: rgba(15,23,42,1);
-    }
-
-    /* LAYOUT BASE */
-    main {
-      max-width: 1120px;
+    .container {
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 24px 18px 60px;
+      padding: 0 20px;
     }
 
-    section {
-      margin-bottom: 70px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.3);
-      font-size: 0.72rem;
-      color: var(--ajuda-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 12px rgba(34,197,94,0.7);
-    }
-
-    h1, h2, h3 {
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    h1 {
-      font-size: clamp(2.1rem, 3.2vw + 1rem, 3rem);
-      margin: 16px 0 10px;
-    }
-
-    h2 {
-      font-size: 1.7rem;
-      margin-bottom: 12px;
-    }
-
-    h3 {
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    p {
-      color: var(--ajuda-muted);
-      font-size: 0.97rem;
-    }
+    section { padding: 64px 0; }
 
     /* HERO */
     .hero {
+      padding: 80px 0 64px;
+      background: linear-gradient(to bottom, #e8f0fe 0%, #ffffff 60%);
+    }
+
+    .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
       gap: 32px;
       align-items: center;
-      margin-top: 14px;
     }
 
-    .hero-kicker {
-      font-size: 0.9rem;
-      color: var(--ajuda-soft);
-      margin-bottom: 10px;
-    }
-
-    .hero-highlight {
-      background: linear-gradient(to right, #a5f3fc, #bbf7d0);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      max-width: 460px;
-      margin-bottom: 18px;
-    }
-
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .hero-chip {
-      font-size: 0.78rem;
-      color: var(--ajuda-soft);
-      background: rgba(15,23,42,0.9);
-      border-radius: var(--radius-pill);
-      padding: 5px 10px;
-      border: 1px solid rgba(148,163,184,0.35);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .tagline {
+      display: inline-flex;
       align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #e3f2fd;
+      color: #1967d2;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       margin-bottom: 14px;
     }
 
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--ajuda-muted);
+    .tag-dot {
+      width: 6px; height: 6px;
+      border-radius: 999px;
+      background: #1967d2;
     }
 
-    .hero-card {
-      position: relative;
-      border-radius: 26px;
-      border: 1px solid rgba(148,163,184,0.35);
-      background: radial-gradient(circle at top left, #1f2937, #020617);
-      padding: 20px 18px;
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-
-    .hero-card-tag {
-      font-size: 0.75rem;
-      color: var(--ajuda-muted);
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 2.9rem);
       margin-bottom: 10px;
     }
 
-    .hero-stats {
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.98rem;
+    }
+
+    .hero-cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      margin: 12px 0 18px;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
-    .hero-stat {
-      min-width: 80px;
+    .btn-primary {
+      border-radius: 999px;
+      padding: 10px 20px;
+      border: none;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(26,115,232,0.3);
     }
 
-    .hero-stat strong {
-      font-size: 1.25rem;
-      color: #e5e7eb;
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-muted);
+      font-weight: 500;
+      cursor: pointer;
     }
 
-    .hero-stat span {
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-image {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      font-size: 0.75rem;
-      color: var(--ajuda-muted);
     }
 
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.95);
-      border: 1px solid rgba(148,163,184,0.45);
-      font-size: 0.78rem;
-      color: var(--ajuda-soft);
-    }
-
-    .hero-pill img {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      background: #0f172a;
-    }
-
-    .hero-glow {
-      position: absolute;
-      inset: auto -120px -120px auto;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(34,197,94,0.2), transparent 65%);
-      pointer-events: none;
-    }
-
-    /* GRID SECTIONS */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
-      gap: 24px;
-    }
-
-    .card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--ajuda-border);
-      background: radial-gradient(circle at top, rgba(15,23,42,0.96), #020617);
-      padding: 16px 16px 18px;
-    }
-
-    .card-soft {
-      background: radial-gradient(circle at top left, rgba(15,23,42,0.98), rgba(15,23,42,0.96));
-      border-color: rgba(148,163,184,0.4);
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
-    .icon-circle {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: var(--ajuda-accent-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      color: #bbf7d0;
-    }
-
-    .pill-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      font-size: 0.72rem;
-      color: var(--ajuda-muted);
+    /* SECTION TITLES */
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
       margin-bottom: 6px;
     }
 
-    .list-check {
-      list-style: none;
+    .section-sub {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 26px;
+      font-size: 0.96rem;
+    }
+
+    /* GRID & CARDS */
+    .grid {
       display: grid;
-      gap: 6px;
-      font-size: 0.9rem;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
-    .list-check li::before {
-      content: "✓";
-      display: inline-block;
-      margin-right: 6px;
-      color: #4ade80;
-      font-weight: 600;
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+      box-shadow: 0 2px 8px rgba(60,64,67,0.08);
     }
 
-    /* TESTEMUNHOS */
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #174ea6;
     }
 
-    .testimonial {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.45);
-      padding: 16px 16px 14px;
-      background: radial-gradient(circle at top left, #111827, #020617);
-      font-size: 0.9rem;
-    }
-
-    .testimonial-footer {
-      margin-top: 12px;
-      font-size: 0.8rem;
-      color: var(--ajuda-muted);
-    }
-
-    .stars {
-      color: #fde047;
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-      margin-bottom: 4px;
-    }
-
-    /* CONTACTO */
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
-      gap: 24px;
-    }
-
-    .contact-box {
-      border-radius: 24px;
-      border: 1px solid rgba(148,163,184,0.45);
-      background: radial-gradient(circle at top, #111827, #020617);
-      padding: 18px 16px 20px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin: 10px 0 16px;
-      font-size: 0.9rem;
-    }
-
-    .contact-item-title {
-      font-size: 0.85rem;
-      color: var(--ajuda-muted);
-      margin-bottom: 2px;
-    }
-
-    .contact-item-value {
+    .card p {
       font-size: 0.95rem;
-      color: var(--ajuda-soft);
+      color: var(--text-muted);
     }
 
-    .contact-note {
-      font-size: 0.8rem;
-      color: var(--ajuda-muted);
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      object-fit: cover;
+      max-height: 220px;
     }
 
-    .mini-form-grid {
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .list li { margin-bottom: 4px; }
+
+    .two-col {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 8px;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 26px;
+      align-items: start;
     }
 
-    label {
-      font-size: 0.78rem;
-      color: var(--ajuda-muted);
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid rgba(148,163,184,0.5);
-      background: rgba(15,23,42,0.94);
-      color: var(--ajuda-soft);
-      padding: 8px 9px;
-      font-size: 0.86rem;
-      outline: none;
-    }
-
-    textarea {
-      min-height: 80px;
-      resize: vertical;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: rgba(148,163,184,0.7);
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: #22c55e;
-      box-shadow: 0 0 0 1px rgba(34,197,94,0.4);
-    }
-
-    .btn-submit {
-      margin-top: 6px;
-      width: 100%;
-      border-radius: 999px;
-      border: none;
-      padding: 10px 14px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      background: linear-gradient(to right, #22c55e, #14b8a6);
-      color: #022c22;
-      cursor: pointer;
-      box-shadow: 0 18px 40px rgba(5, 150, 105, 0.6);
-      transition: 0.18s ease;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 22px 55px rgba(5, 150, 105, 0.7);
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(148,163,184,0.3);
-      padding: 16px 18px 22px;
-      background: #020617;
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-top: 10px;
     }
 
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
+    .badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: #174ea6;
+    }
+
+    .process-step {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       gap: 10px;
-      font-size: 0.78rem;
-      color: var(--ajuda-muted);
+      margin-bottom: 10px;
     }
 
-    .footer-links {
+    .step-number {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: #174ea6;
+      font-size: 0.8rem;
       display: flex;
-      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .step-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .alert-box {
+      border-radius: var(--radius);
+      border: 1px solid #f6c7c7;
+      background: #fff4f4;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      color: #b00020;
+    }
+
+    /* CONTACTO */
+    .contact-card {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-card p { margin-bottom: 6px; }
+
+    .contact-badges {
+      display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 0.83rem;
+      color: var(--text-muted);
     }
 
-    .footer-links a {
-      border-bottom: 1px dotted transparent;
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 18px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: #f8f9fa;
     }
 
-    .footer-links a:hover {
-      border-bottom-color: rgba(148,163,184,0.8);
-      color: #e5e7eb;
-    }
-
-    /* RESPONSIVO */
-    @media (max-width: 900px) {
-      nav ul {
-        display: none;
-      }
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-card {
-        order: -1;
-      }
-      .grid-3 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .grid-2,
-      .contact-wrapper,
-      .testimonials {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      main {
-        padding: 18px 14px 40px;
-      }
-      .nav-inner {
-        padding-inline: 12px;
-      }
-      section {
-        margin-bottom: 52px;
-      }
-      h1 {
-        font-size: 1.9rem;
-      }
-      .hero-card {
-        padding: 16px 14px;
-      }
-      .contact-box {
-        padding: 16px 14px;
-      }
+    @media (max-width: 800px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .hero { padding-top: 70px; }
+      .two-col { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <div class="nav-inner">
-      <a href="#top" class="logo">
-        <div class="logo-mark">A</div>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-mark">AJ</div>
         <div>
-          <div class="logo-text-title">AjudaTotal.je</div>
-          <div class="logo-text-sub">Terapias & Apoio Emocional</div>
+          <div style="font-size:0.95rem;">AJUDATOTAL.JE</div>
+          <div style="font-size:0.78rem; color:var(--text-muted);">Apoio à Saúde Mental &amp; Bem-Estar</div>
         </div>
-      </a>
-
-      <nav aria-label="Navegação principal">
+      </div>
+      <nav>
         <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#para-quem">Para quem</a></li>
+          <li><a href="#saude-mental">Saúde mental</a></li>
           <li><a href="#como-funciona">Como funciona</a></li>
-          <li><a href="#testemunhos">Testemunhos</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-
-      <div class="nav-cta">
-        <a class="btn-outline" href="#contacto">Marcar sessão</a>
-        <a class="btn-whatsapp" href="https://wa.me/447797731419" target="_blank" rel="noopener">
-          💬 WhatsApp
-        </a>
-      </div>
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <!-- HERO -->
     <section class="hero">
-      <div>
-        <div class="badge">
-          <span class="badge-dot"></span>
-          Apoio confidencial em Jersey
-        </div>
-
-        <p class="hero-kicker">Bem-estar mental • Terapias holísticas • Acompanhamento humano</p>
-
-        <h1>
-          Um espaço seguro para cuidar da
-          <span class="hero-highlight">mente, corpo e emoções.</span>
-        </h1>
-
-        <p class="hero-sub">
-          A AjudaTotal oferece apoio emocional e terapias holísticas em Jersey para quem se sente sobrecarregado, ansioso,
-          cansado ou simplesmente precisa de alguém disponível para ouvir e orientar.
-        </p>
-
-        <div class="hero-points">
-          <div class="hero-chip">🌿 Abordagem holística</div>
-          <div class="hero-chip">🤫 100% confidencial</div>
-          <div class="hero-chip">💬 Sessões presenciais & online</div>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn-whatsapp" href="https://wa.me/447797731419?text=Olá%2C+gostava+de+marcar+uma+sessão+na+AjudaTotal." target="_blank" rel="noopener">
-            Reservar sessão por WhatsApp
-          </a>
-          <a class="btn-outline" href="#servicos">Ver serviços</a>
-        </div>
-
-        <p class="hero-note">
-          Tempo médio de resposta: <strong>até 24h</strong> • Idiomas: Português & Inglês
-        </p>
-      </div>
-
-      <aside class="hero-card" aria-label="Resumo AjudaTotal">
-        <div class="hero-card-tag">AjudaTotal Jersey</div>
-        <h3>Quando a vida pesa, não precisa carregar tudo sozinho.</h3>
-        <p style="font-size:0.9rem;margin-top:6px;">
-          Trabalhamos com cada pessoa de forma individual, respeitando a sua história, limites e ritmo.
-        </p>
-
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <strong>1&nbsp;para&nbsp;1</strong>
-            <span>Acompanhamento personalizado</span>
-          </div>
-          <div class="hero-stat">
-            <strong>+Bem-estar</strong>
-            <span>Gestão de ansiedade e stress</span>
-          </div>
-          <div class="hero-stat">
-            <strong>+Equilíbrio</strong>
-            <span>Foco em mente & corpo</span>
-          </div>
-        </div>
-
-        <div class="hero-pill">
-          <div style="width:22px;height:22px;border-radius:999px;background:#0f172a;border:1px solid rgba(148,163,184,0.7);"></div>
-          <div>
-            <div style="font-size:0.8rem;">Primeira conversa gratuita</div>
-            <div style="font-size:0.72rem;color:#9ca3af;">Explica a tua situação sem compromisso.</div>
-          </div>
-        </div>
-
-        <div class="hero-glow" aria-hidden="true"></div>
-      </aside>
-    </section>
-
-    <!-- SOBRE -->
-    <section id="sobre">
-      <div class="grid-2">
+      <div class="container hero-inner">
         <div>
-          <div class="badge">
-            <span class="badge-dot"></span>
-            Sobre a AjudaTotal
+          <div class="tagline">
+            <span class="tag-dot"></span>
+            <span>Saúde mental em primeiro lugar</span>
           </div>
-          <h2>Quem somos & o que acreditamos</h2>
+          <h1>
+            Apoio estruturado para <span>ansiedade, stress, autoestima</span> e relações.
+          </h1>
           <p>
-            A AjudaTotal nasceu com o objetivo de proporcionar um espaço acolhedor e sem julgamentos
-            para quem vive momentos de ansiedade, tristeza, burnout, luto, solidão ou confusão emocional.
+            A AJUDATOTAL.JE oferece um acompanhamento focado em saúde mental e bem-estar emocional.
+            Através de coaching e conversas estruturadas, ajudamos a ganhar clareza, organizar a vida
+            e criar estratégias para lidar melhor com pensamentos, emoções e relações do dia a dia.
           </p>
-          <p style="margin-top:10px;">
-            Acreditamos que cada pessoa merece ser escutada com atenção e respeito. Usamos uma abordagem
-            integrativa que combina técnicas de <strong>apoio emocional</strong>, <strong>relaxamento</strong>,
-            <strong>mindfulness</strong> e ferramentas de desenvolvimento pessoal.
-          </p>
-          <p style="margin-top:10px;">
-            O foco é simples: ajudar-te a recuperar equilíbrio, clareza e força para continuares o teu caminho com
-            mais serenidade.
+          <div class="hero-cta">
+            <a class="btn-primary" href="#contacto">Marcar conversa inicial</a>
+            <a class="btn-ghost" href="#para-quem">Ver se este apoio é para mim</a>
+          </div>
+          <p class="hero-note">
+            Sessões por telefone, email, Zoom, WhatsApp ou presenciais – conforme o que for mais cómodo para si.
           </p>
         </div>
 
-        <div class="card card-soft">
-          <div class="card-header">
-            <div class="icon-circle">🌿</div>
-            <div>
-              <h3>Para quem é a AjudaTotal?</h3>
-              <p style="font-size:0.8rem;">Não é preciso “estar no limite” para pedir ajuda.</p>
-            </div>
-          </div>
-          <ul class="list-check" style="margin-top:8px;">
-            <li>Sentes ansiedade, preocupação constante ou dificuldade em desligar.</li>
-            <li>Passas por mudanças na vida (separação, mudança de país, perda, trabalho).</li>
-            <li>Sentes cansaço emocional, esgotamento ou falta de motivação.</li>
-            <li>Queres aprender a cuidar melhor de ti e colocar limites saudáveis.</li>
-            <li>Procuras um espaço neutro e confidencial para falar sem julgamentos.</li>
-          </ul>
+        <div class="hero-image">
+          <!-- TROCAR POR UMA FOTO NOVA RELACIONADA COM SAÚDE MENTAL -->
+          <img src="img/saude-mental-grupo.jpg" alt="Sessão de apoio à saúde mental, pessoas a conversar em círculo">
         </div>
       </div>
     </section>
 
-    <!-- SERVIÇOS -->
-    <section id="servicos">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Serviços de apoio & terapia
-      </div>
-      <h2>Como podemos ajudar-te</h2>
-      <p style="max-width:640px;margin-bottom:18px;">
-        Escolhe o tipo de acompanhamento que melhor se adapta à tua fase de vida. As sessões podem ser
-        <strong>presenciais em Jersey</strong> ou <strong>online</strong> (vídeo chamada).
-      </p>
+    <!-- PARA QUEM -->
+    <section id="para-quem">
+      <div class="container">
+        <h2 class="section-title">Para quem é este serviço?</h2>
+        <p class="section-sub">
+          Para pessoas que sentem que a saúde mental está a ser afetada e querem apoio para lidar melhor com a vida diária.
+        </p>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-header">
-            <div class="icon-circle">💬</div>
-            <div>
-              <h3>Apoio emocional 1-a-1</h3>
-              <p style="font-size:0.85rem;color:var(--ajuda-muted);">
-                Sessões individuais focadas nas tuas necessidades atuais.
-              </p>
-            </div>
+        <div class="grid">
+          <div class="card">
+            <img src="img/ansiedade.jpg" alt="Pessoa ansiosa a segurar a cabeça">
+            <h3>Ansiedade e preocupação constante</h3>
+            <p>
+              Quando a mente não pára, o sono piora e qualquer situação se torna um motivo para preocupação,
+              é importante não enfrentar tudo sozinho. O apoio certo ajuda a organizar pensamentos e criar estratégias de gestão da ansiedade.
+            </p>
           </div>
-          <div class="pill-label">Duração média: 60 minutos</div>
-          <p style="margin-top:6px;font-size:0.9rem;">
-            Espaço seguro para falares abertamente sobre o que estás a viver. Juntos vamos organizar pensamentos,
-            aliviar emoções difíceis e encontrar estratégias práticas para o teu dia a dia.
-          </p>
-          <ul class="list-check" style="margin-top:8px;">
-            <li>Ansiedade e preocupação constante.</li>
-            <li>Sentimento de solidão ou vazio.</li>
-            <li>Dificuldade em tomar decisões.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div class="icon-circle">🧘‍♀️</div>
-            <div>
-              <h3>Terapias de relaxamento</h3>
-              <p style="font-size:0.85rem;color:var(--ajuda-muted);">
-                Técnicas simples para acalmar o corpo e a mente.
-              </p>
-            </div>
+          <div class="card">
+            <img src="img/stress-burnout.jpg" alt="Profissional cansado no local de trabalho">
+            <h3>Stress, cansaço e burnout</h3>
+            <p>
+              Trabalho, família, finanças… Quando tudo parece demais, o stress começa a afetar o corpo e as emoções.
+              Ajudamos a definir limites, priorizar tarefas e encontrar formas mais saudáveis de gerir a pressão diária.
+            </p>
           </div>
-          <div class="pill-label">Respiração • Mindfulness • Grounding</div>
-          <p style="margin-top:6px;font-size:0.9rem;">
-            Sessões focadas em ensinar-te exercícios de respiração, relaxamento muscular e presença no momento,
-            para poderes usar sozinho quando a ansiedade ou o stress aparecerem.
-          </p>
-          <ul class="list-check" style="margin-top:8px;">
-            <li>Protocolos simples para usar em casa ou no trabalho.</li>
-            <li>Redução de tensão física e mental.</li>
-            <li>Ajuda no sono e na recuperação.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div class="icon-circle">👥</div>
-            <div>
-              <h3>Acompanhamento contínuo</h3>
-              <p style="font-size:0.85rem;color:var(--ajuda-muted);">
-                Plano mensal para quem quer suporte regular.
-              </p>
-            </div>
+          <div class="card">
+            <img src="img/autoestima.jpg" alt="Pessoa a olhar pela janela de forma calma">
+            <h3>Autoestima e autoconfiança</h3>
+            <p>
+              Pensamentos como “não sou capaz” ou “nada em mim é suficiente” desgastam a saúde mental.
+              O acompanhamento trabalha a forma como se vê, valorizando qualidades, conquistas e potenciais.
+            </p>
           </div>
-          <div class="pill-label">Pack de sessões + acompanhamento por mensagem</div>
-          <p style="margin-top:6px;font-size:0.9rem;">
-            Acompanhamento estruturado para quem prefere ter alguém “do outro lado” ao longo do mês,
-            com sessões agendadas e pequenos check-ins por mensagem.
-          </p>
-          <ul class="list-check" style="margin-top:8px;">
-            <li>Plano adaptado à tua agenda.</li>
-            <li>Objetivos claros e partilhados.</li>
-            <li>Reavaliação regular do teu progresso.</li>
-          </ul>
+          <div class="card">
+            <img src="img/relacoes.jpg" alt="Duas pessoas a conversar num sofá">
+            <h3>Relações e isolamento</h3>
+            <p>
+              Dificuldade em manter vínculos, afastamento da família ou sentir-se sempre “de fora” pode ser sinal de que precisa de apoio.
+              Juntos, exploramos formas mais equilibradas de se relacionar consigo e com os outros.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <p style="margin-top:14px;font-size:0.85rem;color:var(--ajuda-muted);">
-        Valores das sessões variam consoante o formato (presencial/online) e a duração. Pergunta pelo
-        <strong>plano mais adequado</strong> à tua situação no primeiro contacto.
-      </p>
+    <!-- SAÚDE MENTAL -->
+    <section id="saude-mental" style="background: var(--bg-alt);">
+      <div class="container">
+        <h2 class="section-title">Como este apoio ajuda a sua saúde mental?</h2>
+        <p class="section-sub">
+          Não substitui psicoterapia ou psiquiatria, mas pode ser um complemento importante na sua rotina de autocuidado.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Mais clareza emocional</h3>
+            <ul class="list">
+              <li>Identificar gatilhos de ansiedade, stress e tristeza.</li>
+              <li>Dar nome às emoções e perceber de onde vêm.</li>
+              <li>Aprender a responder em vez de reagir no automático.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Estratégias para o dia a dia</h3>
+            <ul class="list">
+              <li>Criar pequenos hábitos que protegem a saúde mental.</li>
+              <li>Organizar o tempo para incluir descanso real.</li>
+              <li>Preparar planos de ação para momentos difíceis.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Reforço de autoestima</h3>
+            <ul class="list">
+              <li>Reconhecer qualidades e conquistas.</li>
+              <li>Trabalhar pensamentos automáticos negativos.</li>
+              <li>Desenvolver uma voz interna mais gentil.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Relações mais saudáveis</h3>
+            <ul class="list">
+              <li>Comunicar necessidades com mais clareza.</li>
+              <li>Aprender a pôr limites sem culpa.</li>
+              <li>Criar espaço para relações de apoio mútuo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:26px; max-width:780px; margin-left:auto; margin-right:auto;">
+          <div class="alert-box">
+            <strong>Aviso importante:</strong> a AJUDATOTAL.JE não é um serviço de emergência, psicoterapia nem psiquiatria.
+            Se está a ter pensamentos de autoagressão ou risco imediato, contacte os serviços de urgência do seu país
+            ou a linha de apoio em crise da sua região.
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- COMO FUNCIONA -->
     <section id="como-funciona">
-      <div class="grid-2">
-        <div>
-          <div class="badge">
-            <span class="badge-dot"></span>
-            Como funciona na prática
+      <div class="container">
+        <h2 class="section-title">Como vou trabalhar consigo?</h2>
+        <p class="section-sub">
+          O foco é ser um facilitador: sair do estado atual e aproximar-se, passo a passo, do estado mental e emocional que deseja.
+        </p>
+
+        <div class="two-col">
+          <div>
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <div class="step-text">
+                <strong>Conversa inicial</strong><br>
+                Falamos sobre o que está a viver neste momento, quais os principais desafios emocionais
+                e o que gostaria de mudar. Esta conversa ajuda a perceber se o serviço faz sentido para si.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <div class="step-text">
+                <strong>Definir objetivos de bem-estar</strong><br>
+                Juntos, definimos objetivos realistas: dormir melhor, reduzir ataques de ansiedade,
+                organizar melhor a semana, melhorar a relação consigo próprio, etc.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <div class="step-text">
+                <strong>Plano de ação</strong><br>
+                Criamos um plano adaptado à sua rotina, com pequenos passos semanais e estratégias
+                que pode aplicar entre sessões.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <div class="step-text">
+                <strong>Acompanhamento contínuo</strong><br>
+                Em cada sessão revemos o que funcionou, o que foi difícil e ajustamos o plano.
+                Assim, mantém-se em movimento sem se sentir sozinho no processo.
+              </div>
+            </div>
           </div>
-          <h2>Simples, humano e sem complicações</h2>
-          <p>
-            Sabemos que dar o primeiro passo pode ser difícil. Por isso tornámos todo o processo o mais leve possível.
-          </p>
-          <ul class="list-check" style="margin-top:10px;">
-            <li>Primeira conversa curta e gratuita por mensagem ou chamada.</li>
-            <li>Explicas o que te traz à AjudaTotal e o que estás a sentir.</li>
-            <li>Juntos definimos qual o tipo de sessão mais indicado.</li>
-            <li>Agendamos o melhor dia/horário para ti (manhã, tarde ou pós-laboral).</li>
-          </ul>
-          <p style="margin-top:10px;">
-            Se em qualquer momento sentirmos que precisas de outro tipo de apoio (por exemplo, psiquiatria
-            ou outro profissional de saúde), ajudamos a orientar-te com honestidade e respeito.
-          </p>
+
+          <div class="card">
+            <h3>Formato das sessões</h3>
+            <p>Escolha a forma que lhe traz mais conforto:</p>
+            <div class="badge-row">
+              <span class="badge">Telefone</span>
+              <span class="badge">Email</span>
+              <span class="badge">Zoom</span>
+              <span class="badge">WhatsApp</span>
+              <span class="badge">Presencial</span>
+            </div>
+            <p style="margin-top:12px; font-size:0.9rem; color:var(--text-muted);">
+              A duração e frequência das sessões são combinadas consigo, de acordo com as suas necessidades
+              e possibilidades.
+            </p>
+          </div>
         </div>
-
-        <div class="card card-soft">
-          <h3>Passo a passo</h3>
-          <ol style="margin-top:8px;padding-left:18px;font-size:0.9rem;color:var(--ajuda-muted);display:grid;gap:4px;">
-            <li><strong>Envia mensagem pelo WhatsApp</strong> com o teu nome e motivo do contacto.</li>
-            <li><strong>Recebes resposta</strong> com algumas perguntas simples e sugestões de horários.</li>
-            <li><strong>Confirmamos a sessão</strong> (presencial em Jersey ou online).</li>
-            <li><strong>Antes da sessão</strong> recebes, se quiseres, algumas orientações para te preparares.</li>
-            <li><strong>Depois da sessão</strong> podes combinar acompanhamento pontual por mensagem.</li>
-          </ol>
-          <p style="margin-top:10px;font-size:0.85rem;">
-            O objetivo é que te sintas acompanhado, e não apenas “mais uma marcação na agenda”.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTEMUNHOS -->
-    <section id="testemunhos">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Experiências de quem já passou por aqui
-      </div>
-      <h2>Testemunhos (anonimizados)</h2>
-      <p style="max-width:640px;margin-bottom:16px;">
-        Para proteger a privacidade, os nomes foram alterados, mas as histórias são reais.
-      </p>
-
-      <div class="testimonials">
-        <article class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>
-            “Cheguei num ponto de exaustão em que não conseguia organizar os pensamentos. As sessões ajudaram-me a
-            perceber o que estava a sentir e a criar pequenas mudanças diárias. Hoje sinto-me muito mais estável.”
-          </p>
-          <div class="testimonial-footer">“M.” – 34 anos, residente em Jersey</div>
-        </article>
-
-        <article class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>
-            “Gostei sobretudo do facto de não sentir julgamento. Houve semanas em que eu só precisava que alguém me
-            ouvisse e me lembrasse que eu estava a fazer o melhor que conseguia.”
-          </p>
-          <div class="testimonial-footer">“A.” – 41 anos</div>
-        </article>
-
-        <article class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>
-            “Aprendi técnicas simples de respiração e grounding que uso no trabalho quando a ansiedade sobe.
-            Parecem detalhes, mas mudaram muito o meu dia a dia.”
-          </p>
-          <div class="testimonial-footer">“L.” – 28 anos</div>
-        </article>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Contacto & marcações
-      </div>
-      <h2>Vamos falar?</h2>
-      <p style="max-width:620px;margin-bottom:16px;">
-        Podes entrar em contacto por WhatsApp, e-mail ou através do pequeno formulário abaixo. Responderemos
-        o mais rapidamente possível.
-      </p>
+    <section id="contacto" style="background:#f8f9ff;">
+      <div class="container">
+        <h2 class="section-title">Dar o primeiro passo</h2>
+        <p class="section-sub">
+          Não precisa de ter tudo “organizadinho” para pedir ajuda. Começamos exatamente a partir de onde está.
+        </p>
 
-      <div class="contact-wrapper">
-        <div class="contact-box">
-          <h3>Informações principais</h3>
+        <div class="card contact-card">
+          <p><strong>Email:</strong> <a href="mailto:ajudatotal.je@gmail.com">ajudatotal.je@gmail.com</a></p>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-top:6px;">
+            Escreva em poucas linhas o que está a sentir e o que gostaria de trabalhar.
+            Irá receber resposta com propostas de horário para a conversa inicial.
+          </p>
 
-          <div class="contact-grid">
-            <div>
-              <div class="contact-item-title">WhatsApp</div>
-              <div class="contact-item-value">
-                <a href="https://wa.me/447797731419" target="_blank" rel="noopener">
-                  +44 7797 731419
-                </a>
-              </div>
-            </div>
-            <div>
-              <div class="contact-item-title">E-mail</div>
-              <div class="contact-item-value">
-                <a href="mailto:ajudatotal.je@example.com">
-                  ajudatotal.je@example.com
-                </a>
-              </div>
-            </div>
-            <div>
-              <div class="contact-item-title">Localização</div>
-              <div class="contact-item-value">
-                Jersey, Channel Islands
-              </div>
-            </div>
-            <div>
-              <div class="contact-item-title">Idiomas</div>
-              <div class="contact-item-value">
-                Português • Inglês
-              </div>
-            </div>
+          <div class="contact-badges">
+            <span>Atendimento confidencial</span>
+            <span>Ambiente seguro e sem julgamentos</span>
           </div>
 
-          <p class="contact-note">
-            Se estiveres em crise ou em risco imediato, contacta de imediato os serviços de emergência
-            locais ou a linha de crise mais próxima. A AjudaTotal não substitui cuidados médicos de urgência.
-          </p>
-
-          <a class="btn-whatsapp" style="margin-top:14px;width:100%;justify-content:center;"
-             href="https://wa.me/447797731419?text=Olá%2C+gostava+de+marcar+uma+sessão+na+AjudaTotal."
-             target="_blank" rel="noopener">
-            💬 Enviar mensagem agora
-          </a>
-        </div>
-
-        <div class="contact-box">
-          <h3>Formulário rápido de contacto</h3>
-          <p style="font-size:0.85rem;margin-top:4px;margin-bottom:10px;">
-            Podes adaptar este formulário se estiveres a usar outra plataforma. Exemplo de campos:
-          </p>
-
-          <form class="mini-form-grid" onsubmit="event.preventDefault(); alert('Obrigado pelo contacto! Envia também mensagem por WhatsApp para resposta mais rápida.');">
-            <div>
-              <label for="nome">Nome</label>
-              <input id="nome" type="text" placeholder="O teu primeiro nome" required>
-            </div>
-            <div>
-              <label for="contacto">E-mail ou telefone</label>
-              <input id="contacto" type="text" placeholder="Onde podemos responder?" required>
-            </div>
-            <div>
-              <label for="motivo">Motivo principal do contacto</label>
-              <select id="motivo" required>
-                <option value="">Escolhe uma opção</option>
-                <option value="ansiedade">Ansiedade / preocupação</option>
-                <option value="stress">Stress / burnout</option>
-                <option value="luto">Luto / perda</option>
-                <option value="relacoes">Relações / família</option>
-                <option value="outro">Outro motivo</option>
-              </select>
-            </div>
-            <div>
-              <label for="mensagem">Mensagem (resumo do que estás a viver)</label>
-              <textarea id="mensagem" placeholder="Partilha, em poucas linhas, o que estás a sentir."></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Enviar pedido de contacto</button>
-          </form>
-
-          <p class="contact-note" style="margin-top:10px;">
-            Ao enviar, confirmas que compreendes que este contacto não substitui uma situação de emergência
-            médica ou psiquiátrica.
-          </p>
+          <div style="margin-top:18px;">
+            <a class="btn-primary" href="mailto:ajudatotal.je@gmail.com">Agendar conversa</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-inner">
-      <div>
-        © <span id="year"></span> AjudaTotal Jersey. Todos os direitos reservados.
-      </div>
-      <div class="footer-links">
-        <a href="#top">Voltar ao topo</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-    </div>
+    <p>&copy; 2025 AJUDATOTAL.JE – Apoio à Saúde Mental &amp; Bem-Estar.</p>
   </footer>
-
-  <script>
-    // Atualizar ano automaticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
