@@ -32,7 +32,7 @@
       --text-muted: #6b7280;
       --text-soft: #9ca3af;
 
-      --accent-main: #4a6fa5;   /* azul calmo */
+      --accent-main: #4a6fa5;
       --accent-soft: #7fa2d4;
       --accent-green: #6b8c42;
       --accent-warm: #c19a6b;
@@ -67,7 +67,7 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* Language system (igual ao site da AP Digital) */
+    /* Language system */
     .lang-en { display: none; }
     html[data-lang="en"] .lang-en { display: inline; }
     html[data-lang="en"] .lang-en.block { display: block; }
@@ -98,6 +98,12 @@
       justify-content: space-between;
       padding: 10px 20px;
       gap: 18px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
 
     .brand {
@@ -139,20 +145,20 @@
       color: var(--text-main);
     }
 
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 18px;
       font-size: 0.9rem;
     }
 
-    nav a {
+    .nav-links a {
       color: var(--text-muted);
       position: relative;
       padding-bottom: 2px;
     }
 
-    nav a::after {
+    .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
@@ -163,11 +169,11 @@
       transition: width 0.2s ease-out;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: var(--text-main);
     }
 
-    nav a:hover::after { width: 100%; }
+    .nav-links a:hover::after { width: 100%; }
 
     .lang-switch {
       display: inline-flex;
@@ -200,8 +206,8 @@
     }
 
     @media (max-width: 768px) {
-      nav { display: none; }
       .nav { padding-inline: 14px; }
+      .nav-links { display: none; }   /* esconde só os links, não o botão PT/EN */
     }
 
     /* HERO */
@@ -563,38 +569,41 @@
 <body>
   <header>
     <div class="nav container">
-      <a href="#top" class="brand" aria-label="AJUDATOTAL.JE">
-        <div class="brand-mark">🧠</div>
-        <div class="brand-text">
-          <span>AJUDATOTAL.JE</span>
-          <span class="lang-pt">Saúde mental em Jersey</span>
-          <span class="lang-en">Mental health in Jersey</span>
-        </div>
-      </a>
-
-      <nav>
-        <a href="#why">
-          <span class="lang-pt">Porquê cuidar</span>
-          <span class="lang-en">Why care</span>
-        </a>
-        <a href="#support">
-          <span class="lang-pt">Áreas de apoio</span>
-          <span class="lang-en">Support areas</span>
-        </a>
-        <a href="#process">
-          <span class="lang-pt">Como funciona</span>
-          <span class="lang-en">How it works</span>
-        </a>
-        <a href="#contact">
-          <span class="lang-pt">Contacto</span>
-          <span class="lang-en">Contact</span>
+      <div class="nav-left">
+        <a href="#top" class="brand" aria-label="AJUDATOTAL.JE">
+          <div class="brand-mark">🧠</div>
+          <div class="brand-text">
+            <span>AJUDATOTAL.JE</span>
+            <span class="lang-pt">Saúde mental em Jersey</span>
+            <span class="lang-en">Mental health in Jersey</span>
+          </div>
         </a>
 
-        <div class="lang-switch" aria-label="Language switcher">
-          <button class="lang-btn active" data-lang-target="pt">PT</button>
-          <button class="lang-btn" data-lang-target="en">EN</button>
-        </div>
-      </nav>
+        <nav class="nav-links">
+          <a href="#why">
+            <span class="lang-pt">Porquê cuidar</span>
+            <span class="lang-en">Why care</span>
+          </a>
+          <a href="#support">
+            <span class="lang-pt">Áreas de apoio</span>
+            <span class="lang-en">Support areas</span>
+          </a>
+          <a href="#process">
+            <span class="lang-pt">Como funciona</span>
+            <span class="lang-en">How it works</span>
+          </a>
+          <a href="#contact">
+            <span class="lang-pt">Contacto</span>
+            <span class="lang-en">Contact</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Botão PT/EN SEMPRE VISÍVEL -->
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-btn active" data-lang-target="pt">PT</button>
+        <button class="lang-btn" data-lang-target="en">EN</button>
+      </div>
     </div>
   </header>
 
@@ -602,7 +611,6 @@
     <!-- HERO -->
     <section class="hero-wrapper">
       <div class="container hero-layout">
-        <!-- TEXT -->
         <div class="hero-text-block">
           <div class="hero-kicker">
             <span class="hero-kicker-dot"></span>
@@ -647,11 +655,10 @@
           </p>
         </div>
 
-        <!-- IMAGE -->
         <div class="hero-media-card">
           <img src="https://images.pexels.com/photos/2821220/pexels-photo-2821220.jpeg" alt="Sessão de apoio emocional">
           <div class="hero-media-caption">
-            <span class="label">
+            <span>
               <span class="lang-pt">Ambiente calmo · Foco em segurança emocional</span>
               <span class="lang-en">Calm environment · Focus on emotional safety</span>
             </span>
@@ -744,7 +751,7 @@
       </div>
     </section>
 
-    <!-- SUPPORT AREAS -->
+    <!-- SUPPORT -->
     <section id="support">
       <div class="container">
         <div class="section-header">
@@ -1027,7 +1034,7 @@
   </footer>
 
   <script>
-    // Switch PT/EN (mesmo sistema do AP Digital Solutions)
+    // Switch PT/EN
     const htmlEl = document.documentElement;
     const langButtons = document.querySelectorAll('.lang-btn');
 
@@ -1043,4 +1050,4 @@
     });
   </script>
 </body>
-            </html>
+</html>
