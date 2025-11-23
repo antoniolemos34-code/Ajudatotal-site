@@ -1,944 +1,252 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AJUDATOTAL.JE – Saúde Mental para a Vida Moderna</title>
 
-  <meta name="description" content="AJUDATOTAL.JE apoia saúde mental e bem-estar emocional com sessões estruturadas para ansiedade, stress, autoestima e relações. Atendimentos online ou presenciais.">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="AJUDATOTAL.JE – Saúde Mental para a Vida Moderna">
-  <meta property="og:description" content="Apoio discreto para cuidar da sua saúde mental. Ansiedade, stress, cansaço emocional, autoestima baixa ou relações difíceis.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.pexels.com/photos/2821220/pexels-photo-2821220.jpeg">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
-  
-  <!-- Fonts -->
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="w2blCMoXUX71iTwvv_HxATn8hEdeRiKiKecDqGDGYvk" />
+
+  <title>AP Digital Solutions | Jersey</title>
+  <meta name="description" content="AP Digital Solutions helps Jersey businesses go digital with chatbots, websites, and social media setup.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    * { box-sizing: border-box; }
     :root {
-      --primary: #4A6FA5;
-      --primary-dark: #3A5A8C;
-      --primary-light: #5B7FB5;
-      --secondary: #6B8C42;
-      --accent: #C19A6B;
-      --light: #F8F9FA;
-      --dark: #2C3E50;
-      --gray: #6C757D;
-      --white: #FFFFFF;
-      --transition: all 0.3s ease;
-      --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-      --radius: 12px;
-    }
-
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3, h4, h5 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      line-height: 1.3;
-      margin-bottom: 1.2rem;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      position: relative;
-    }
-
-    h3 {
-      font-size: 1.4rem;
-    }
-
-    p {
-      margin-bottom: 1.2rem;
-      color: var(--gray);
-    }
-
-    a { 
-      color: var(--primary); 
-      text-decoration: none; 
-      transition: var(--transition);
-    }
-
-    a:hover { 
-      color: var(--primary-dark); 
-    }
-
-    /* SISTEMA DE LÍNGUAS */
-    .lang { display: none; }
-    body.lang-pt .lang.pt { display: block; }
-    body.lang-en .lang.en { display: block; }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--primary);
-    }
-
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: var(--white);
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(74, 111, 165, 0.3);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      color: var(--dark);
-      font-weight: 500;
-      position: relative;
-    }
-
-    .nav-links a:after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover:after {
-      width: 100%;
-    }
-
-    #lang-switch {
-      border: 1px solid var(--primary);
-      padding: 8px 16px;
-      border-radius: 20px;
-      background: transparent;
-      color: var(--primary);
-      cursor: pointer;
-      font-weight: 500;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-
-    #lang-switch:hover {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--primary);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    section { 
-      padding: 80px 0; 
-    }
-
-    /* HERO */
-    .hero {
-      padding: 120px 0 80px;
-      background: linear-gradient(135deg, var(--light) 0%, #E8EFF5 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero:before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      background: rgba(74, 111, 165, 0.05);
-      border-radius: 50%;
-    }
-
-    .hero:after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 400px;
-      height: 400px;
-      background: rgba(107, 140, 66, 0.05);
-      border-radius: 50%;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 50px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.9rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      margin-bottom: 20px;
-      color: var(--dark);
-    }
-
-    .hero h1 span { 
-      color: var(--primary); 
-      position: relative;
-    }
-
-    .hero h1 span:after {
-      content: '';
-      position: absolute;
-      bottom: 5px;
-      left: 0;
-      width: 100%;
-      height: 8px;
-      background: rgba(74, 111, 165, 0.2);
-      z-index: -1;
-    }
-
-    .hero p {
-      color: var(--gray);
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      max-width: 90%;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: var(--transition);
-      cursor: pointer;
-      border: none;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--white);
-      box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(74, 111, 165, 0.4);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .btn-secondary:hover {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-3px);
-    }
-
-    .hero-note {
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    .hero-media {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transform: rotate(2deg);
-      transition: var(--transition);
-    }
-
-    .hero-media:hover {
-      transform: rotate(0deg);
-    }
-
-    .hero-media img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* TITLES */
-    .section-title { 
-      text-align: center; 
-      font-size: 2.2rem; 
-      margin-bottom: 15px; 
-    }
-
-    .section-title:after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: var(--primary);
-      margin: 15px auto 0;
-      border-radius: 2px;
-    }
-
-    .section-sub { 
-      text-align: center; 
-      color: var(--gray); 
-      margin-bottom: 50px;
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* GRID / CARDS */
-    .grid {
-      display: grid;
-      gap: 30px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .card {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 30px 25px;
-      transition: var(--transition);
-      border-top: 4px solid var(--primary);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      object-fit: cover;
-      height: 200px;
-    }
-
-    .list { 
-      padding-left: 20px; 
-      color: var(--gray); 
-    }
-
-    .list li {
-      margin-bottom: 8px;
-    }
-
-    /* TWO COL */
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 50px;
-      align-items: start;
-    }
-
-    .pill-row { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 10px; 
-      margin-top: 15px; 
-    }
-
-    .pill { 
-      padding: 8px 16px; 
-      border-radius: 50px; 
-      border: 1px solid var(--primary); 
-      color: var(--primary); 
-      background: rgba(74, 111, 165, 0.1);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .step { 
-      display: flex; 
-      gap: 15px; 
-      margin-bottom: 25px; 
-      align-items: flex-start;
-    }
-
-    .step-number { 
-      width: 40px; 
-      height: 40px; 
-      border-radius: 50%; 
-      border: 2px solid var(--primary); 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      font-size: 1rem; 
-      color: var(--primary); 
-      font-weight: 600;
-      flex-shrink: 0;
-    }
-
-    .step-text { 
-      color: var(--gray); 
-      font-size: 1rem; 
-    }
-
-    .step-text strong {
-      color: var(--dark);
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .notice {
-      background: #FFF3E0;
-      border: 1px solid #FFB74D;
-      color: #E65100;
-      padding: 15px;
-      border-radius: var(--radius);
-      font-size: 0.9rem;
-      margin-top: 20px;
-    }
-
-    /* CONTACT */
-    .contact-card {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 40px;
-    }
-
-    footer {
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--gray);
-      background: var(--dark);
-      color: var(--white);
-    }
-
-    footer a {
-      color: var(--white);
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero-media {
-        order: -1;
-        max-width: 500px;
-        margin: 0 auto;
-      }
-      
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      section {
-        padding: 60px 0;
-      }
-      
-      h1 {
-        font-size: 2.2rem;
-      }
-      
-      h2 {
-        font-size: 1.8rem;
-      }
-      
-      .nav-links {
-        display: none;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
-      .hero-cta {
-        justify-content: center;
-      }
-      
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero {
-        padding: 100px 0 60px;
-      }
-      
-      .btn {
-        width: 100%;
-        justify-content: center;
-      }
-      
-      .hero-cta {
-        flex-direction: column;
-      }
-      
-      .contact-card {
-        padding: 25px 20px;
-      }
-    }
+      --bg: #0b0b0c;
+      --panel: #111114;
+      --text: #f5f5f5;
+      --muted: #c9c9cf;
+      --accent: #d4af37; /* gold */
+      --accent-2: #b38728;
+      --link: #f5d97a;
+      --border: #1f1f25;
+    }
+    body { margin: 0; font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.5; }
+    a { color: var(--link); }
+    header { position: sticky; top: 0; z-index: 20; background: #0d0d10cc; backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: 14px 20px; max-width:1100px; margin:0 auto; }
+    .logo { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text); }
+    .logo svg { width:34px; height:34px; }
+    .logo span { font-weight:700; letter-spacing:0.3px; }
+    nav a { color: var(--text); text-decoration:none; margin-left:16px; opacity:0.9; }
+    nav a:hover { opacity:1; text-decoration: underline; }
+    .container { max-width:1100px; margin:0 auto; padding:0 20px; }
+    section { padding: 64px 0; }
+    .hero { padding: 110px 0 80px; background: radial-gradient(800px 300px at 50% -50%, #1d1d22, transparent 60%); text-align: center; }
+    .hero h1 { font-size: clamp(30px, 6vw, 52px); margin: 0 0 12px; }
+    .hero p { color: var(--muted); max-width: 760px; margin: 0 auto 20px; }
+    .cta { display:inline-block; margin-top:8px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:#141414; padding: 12px 18px; border-radius: 12px; text-decoration:none; font-weight:700; box-shadow: 0 6px 18px rgba(212,175,55,0.25); }
+    h2.section-title { text-align:center; font-size:1.8rem; margin:0 0 22px; color: var(--text); }
+    .sub { text-align:center; color: var(--muted); margin-top:-8px; margin-bottom:24px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:22px; }
+    .card { background: var(--panel); padding:22px; border-radius:14px; border:1px solid var(--border); }
+    .card h3 { color: var(--accent); margin:0 0 10px; font-size:1.15rem; }
+    .card p { margin: 8px 0 0; color: var(--muted); }
+    .pricing .price { font-size: 2rem; font-weight:700; color: var(--accent); margin: 6px 0 14px; }
+    .list { margin:0; padding-left:18px; color: var(--muted); }
+    .contact-card { text-align:center; }
+    footer { background:#0b0b0c; color:#bdbdc5; text-align:center; padding:22px; font-size:0.95rem; border-top:1px solid var(--border); }
+
+    /* Chatbox */
+    .chatbox { position: fixed; bottom: 20px; right: 20px; background: var(--panel); width: 320px; border-radius: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.35); overflow: hidden; display:flex; flex-direction:column; border:1px solid var(--border); }
+    .chatbox-header { background: #15151a; color: var(--accent); padding: 10px 12px; font-weight: 700; font-size: 0.95rem; display:flex; justify-content:space-between; align-items:center; }
+    .chatbox-messages { flex:1; padding:10px; overflow-y:auto; font-size:0.92rem; background:#0f0f13; }
+    .msg { display:flex; margin:8px 0; }
+    .msg.bot { justify-content:flex-start; }
+    .msg.user { justify-content:flex-end; }
+    .bubble { max-width:80%; padding:8px 12px; border-radius:14px; }
+    .bot .bubble { background:#131319; color: var(--text); border:1px solid #242430; }
+    .user .bubble { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:#1a1a1a; font-weight:700; }
+    .chatbox-input { display:flex; border-top:1px solid #242430; }
+    .chatbox-input input { flex:1; border:none; padding:12px; font-size:0.95rem; outline:none; background:#0f0f13; color: var(--text); }
+    .chatbox-input button { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:#171717; border:none; padding:0 16px; cursor:pointer; font-weight:700; }
+    .badge { background:#212127; color: var(--accent); font-weight:700; padding:2px 8px; border-radius:999px; font-size:0.75rem; margin-left:8px; border:1px solid #2a2a33;}
+    @media (max-width: 640px) { .chatbox { right:12px; left:12px; width:auto; } }
   </style>
 </head>
 
-<body class="lang-pt">
-<header>
-  <div class="nav">
-    <div class="brand">
-      <div class="brand-mark">AJ</div>
-      <div>AJUDATOTAL.JE</div>
+<body>
+
+  <header>
+    <div class="nav">
+      <a class="logo" href="#home" aria-label="AP Digital Solutions">
+        <svg viewBox="0 0 64 64" role="img" aria-label="AP Logo">
+          <defs>
+            <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#d4af37"/>
+              <stop offset="1" stop-color="#b38728"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="4" width="56" height="56" rx="12" fill="none" stroke="url(#g)" stroke-width="4"/>
+          <path d="M18 44L28 20h4l10 24h-5l-2.5-6h-9L23 44h-5zm12-10h6l-3-7.4L30 34z" fill="url(#g)"/>
+        </svg>
+        <span>AP Digital Solutions</span>
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    
-    <nav class="nav-links">
-      <a href="#saude-mental" class="lang pt">Saúde Mental</a>
-      <a href="#saude-mental" class="lang en">Mental Health</a>
-      <a href="#apoio" class="lang pt">Áreas de Apoio</a>
-      <a href="#apoio" class="lang en">Support Areas</a>
-      <a href="#como-funciona" class="lang pt">Como Funciona</a>
-      <a href="#como-funciona" class="lang en">How It Works</a>
-      <a href="#contacto" class="lang pt">Contacto</a>
-      <a href="#contacto" class="lang en">Contact</a>
-    </nav>
+  </header>
 
-    <button class="mobile-menu-btn">☰</button>
-    <button id="lang-switch">EN</button>
-  </div>
-</header>
-
-<main>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-inner">
-
-    <!-- PT -->
-    <div class="lang pt">
-      <div class="hero-eyebrow">Saúde mental • Bem-estar • Vida real</div>
-      <h1>Apoio discreto para cuidar da sua <span>saúde mental</span>.</h1>
-      <p>Ansiedade, stress, cansaço emocional, autoestima baixa ou relações difíceis. Ofereço um espaço seguro e sem julgamentos para explorar e superar estes desafios.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#contacto">Marcar conversa inicial</a>
-        <a class="btn btn-secondary" href="#saude-mental">Ver como posso ajudar</a>
-      </div>
-      <p class="hero-note">Sessões online ou presenciais em Jersey. Resposta por email em até 24 horas.</p>
+  <main id="home" class="hero">
+    <div class="container">
+      <h1>Helping Jersey Businesses Go Digital</h1>
+      <p>We build chatbots, websites, and online presence for local businesses. Fast delivery. Friendly support.</p>
+      <a class="cta" href="https://wa.me/447700704591" target="_blank" rel="noopener">Chat on WhatsApp</a>
     </div>
+  </main>
 
-    <!-- EN -->
-    <div class="lang en">
-      <div class="hero-eyebrow">Mental health • Well-being • Real life</div>
-      <h1>Discreet support to care for your <span>mental health</span>.</h1>
-      <p>Anxiety, stress, emotional fatigue, low self-esteem or difficult relationships. I offer a safe, non-judgemental space to explore and overcome these challenges.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#contacto">Book an initial conversation</a>
-        <a class="btn btn-secondary" href="#saude-mental">See how I can help</a>
-      </div>
-      <p class="hero-note">Online or in-person sessions in Jersey. Email reply within 24 hours.</p>
-    </div>
-
-    <div class="hero-media">
-      <img src="https://images.pexels.com/photos/2821220/pexels-photo-2821220.jpeg" alt="Pessoa em sessão de terapia">
-    </div>
-
-  </div>
-</section>
-
-<!-- SAÚDE MENTAL -->
-<section id="saude-mental">
-  <div class="container">
-
-    <h2 class="section-title lang pt">Porque cuidar da saúde mental?</h2>
-    <h2 class="section-title lang en">Why take care of your mental health?</h2>
-
-    <p class="section-sub lang pt">Falar com alguém de fora ajuda a ganhar espaço, perspetiva e clareza emocional.</p>
-    <p class="section-sub lang en">Talking to someone from the outside helps you gain space, perspective and emotional clarity.</p>
-
-    <div class="two-col">
-
-      <div>
-        <div class="lang pt">
-          <h3>Não é preciso esperar pela crise</h3>
-          <p>Muitas pessoas aguentam demasiado tempo antes de procurar ajuda. A saúde mental é como a física – beneficia de cuidado preventivo.</p>
-          <br>
-          <h3>O processo é colaborativo</h3>
-          <p>O objetivo não é "consertar" ninguém, mas sim construir ferramentas e estratégias para navegar desafios de forma mais eficaz.</p>
-        </div>
-
-        <div class="lang en">
-          <h3>You don't need to wait for a crisis</h3>
-          <p>Many people hold everything in for too long before seeking help. Mental health is like physical health – it benefits from preventive care.</p>
-          <br>
-          <h3>A collaborative process</h3>
-          <p>The goal is not to “fix” anyone, but to build tools and strategies so you can handle challenges more effectively.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3 class="lang pt">Sinais de que pode precisar de ajuda</h3>
-        <h3 class="lang en">Signs you may need support</h3>
-        <ul class="list">
-          <li class="lang pt">Ansiedade diária e persistente</li>
-          <li class="lang en">Daily and persistent anxiety</li>
-          
-          <li class="lang pt">Stress constante e sensação de sobrecarga</li>
-          <li class="lang en">Constant stress and feeling overwhelmed</li>
-          
-          <li class="lang pt">Autoestima baixa e autocrítica excessiva</li>
-          <li class="lang en">Low self-esteem and harsh self-criticism</li>
-          
-          <li class="lang pt">Dificuldade em estabelecer limites</li>
-          <li class="lang en">Difficulty setting boundaries</li>
-          
-          <li class="lang pt">Isolamento e dificuldade em conectar</li>
-          <li class="lang en">Isolation and difficulty connecting with others</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- APOIO -->
-<section id="apoio">
-  <div class="container">
-    <h2 class="section-title lang pt">Áreas em que posso ajudar</h2>
-    <h2 class="section-title lang en">Areas where I can help</h2>
-
-    <p class="section-sub lang pt">Apoio focado na sua saúde mental com abordagem prática e personalizada.</p>
-    <p class="section-sub lang en">Support focused on your mental well-being with a practical, personalised approach.</p>
-
-    <div class="grid">
-
-      <!-- CARD 1 -->
-      <article class="card">
-        <img src="https://images.pexels.com/photos/3972441/pexels-photo-3972441.jpeg" alt="Pessoa a lidar com ansiedade" />
-
-        <h3 class="lang pt">Ansiedade &amp; Stress</h3>
-        <h3 class="lang en">Anxiety &amp; Stress</h3>
-
-        <p class="lang pt">Identificar gatilhos, desenvolver estratégias de coping e organizar pensamentos para reduzir a ansiedade no dia a dia.</p>
-        <p class="lang en">Identify triggers, develop coping strategies and organise thoughts to reduce day-to-day anxiety.</p>
-      </article>
-
-      <!-- CARD 2 -->
-      <article class="card">
-        <img src="https://images.pexels.com/photos/3972467/pexels-photo-3972467.jpeg" alt="Pessoa a refletir sobre autoestima" />
-
-        <h3 class="lang pt">Autoestima &amp; Autoconfiança</h3>
-        <h3 class="lang en">Self-esteem &amp; Confidence</h3>
-
-        <p class="lang pt">Construir uma voz interna mais gentil e realista, reconhecendo o seu valor e capacidades.</p>
-        <p class="lang en">Build a kinder, more realistic inner voice, recognising your value and strengths.</p>
-      </article>
-
-      <!-- CARD 3 -->
-      <article class="card">
-        <img src="https://images.pexels.com/photos/2821220/pexels-photo-2821220.jpeg" alt="Pessoas em relacionamento" />
-
-        <h3 class="lang pt">Relações &amp; Limites</h3>
-        <h3 class="lang en">Relationships &amp; Boundaries</h3>
-
-        <p class="lang pt">Aprender a comunicar necessidades de forma assertiva e estabelecer limites saudáveis.</p>
-        <p class="lang en">Learn to communicate needs assertively and set healthy boundaries.</p>
-      </article>
-
-      <!-- CARD 4 -->
-      <article class="card">
-        <img src="https://images.pexels.com/photos/7640742/pexels-photo-7640742.jpeg" alt="Pessoa em rotina equilibrada" />
-
-        <h3 class="lang pt">Rotina &amp; Equilíbrio</h3>
-        <h3 class="lang en">Routine &amp; Balance</h3>
-
-        <p class="lang pt">Criar hábitos e rotinas que protegem a saúde mental e promovem bem-estar sustentável.</p>
-        <p class="lang en">Create habits and routines that protect your mental health and support sustainable well-being.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section id="como-funciona">
-  <div class="container">
-    <h2 class="section-title lang pt">Como é o trabalho em conjunto?</h2>
-    <h2 class="section-title lang en">How does the process work?</h2>
-
-    <p class="section-sub lang pt">Simples, humano e focado nos seus objetivos.</p>
-    <p class="section-sub lang en">Simple, human and focused on your goals.</p>
-
-    <div class="two-col">
-
-      <div>
-        <!-- PT -->
-        <div class="lang pt">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-text">
-              <strong>Conversa inicial</strong>
-              <div>Uma oportunidade para explicar o que está a viver e conhecer a minha abordagem.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-text">
-              <strong>Definir objetivos</strong>
-              <div>Identificamos juntos o que gostaria de melhorar e onde quer chegar.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-text">
-              <strong>Criar plano</strong>
-              <div>Desenvolvemos passos realistas e adaptados à sua situação específica.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-text">
-              <strong>Acompanhamento</strong>
-              <div>Ao longo do tempo, ajusto a estratégia conforme as suas necessidades evoluem.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- EN -->
-        <div class="lang en">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-text">
-              <strong>Initial conversation</strong>
-              <div>An opportunity to explain what you're going through and get to know my approach.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-text">
-              <strong>Define goals</strong>
-              <div>We identify together what you'd like to improve and where you want to get to.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-text">
-              <strong>Create a plan</strong>
-              <div>We create realistic steps tailored to your specific situation.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-text">
-              <strong>Follow-up</strong>
-              <div>Over time, we adjust the strategy as your needs evolve.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="sub">Everything you need to get found online in Jersey.</p>
+      <div class="grid">
         <div class="card">
-          <h3 class="lang pt">Formatos disponíveis</h3>
-          <h3 class="lang en">Available formats</h3>
-          <div class="pill-row">
-            <span class="pill lang pt">Videochamada</span>
-            <span class="pill lang pt">Telefone</span>
-            <span class="pill lang pt">WhatsApp</span>
-            <span class="pill lang pt">Email</span>
-            <span class="pill lang pt">Presencial</span>
-
-            <span class="pill lang en">Video call</span>
-            <span class="pill lang en">Phone</span>
-            <span class="pill lang en">WhatsApp</span>
-            <span class="pill lang en">Email</span>
-            <span class="pill lang en">In person</span>
-          </div>
+          <h3>Chatbot Creation</h3>
+          <p>Automate customer replies on your website, WhatsApp, or Facebook. Custom flows and AI answers.</p>
         </div>
-        
-        <div class="notice">
-          <p class="lang pt"><strong>Nota importante:</strong> Este serviço não substitui acompanhamento médico ou psicológico. Em caso de emergência, contacte os serviços de saúde.</p>
-          <p class="lang en"><strong>Important note:</strong> This service does not replace medical or psychological care. In an emergency, contact local health services immediately.</p>
+        <div class="card">
+          <h3>Website Development</h3>
+          <p>Modern, responsive websites that look great on phones and computers. Hosting help included.</p>
+        </div>
+        <div class="card">
+          <h3>Social Media Setup</h3>
+          <p>We set up or refresh your profiles and connect them to your website to bring more local customers.</p>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACTO -->
-<section id="contacto">
-  <div class="container">
-
-    <h2 class="section-title lang pt">Dar o primeiro passo</h2>
-    <h2 class="section-title lang en">Take the first step</h2>
-
-    <p class="section-sub lang pt">Começamos exatamente onde está, sem julgamentos.</p>
-    <p class="section-sub lang en">We start exactly from where you are, without judgement.</p>
-
-    <div class="contact-card">
-
-      <p class="lang pt"><strong>Email:</strong> <a href="mailto:ajudatotal.je@gmail.com">ajudatotal.je@gmail.com</a></p>
-      <p class="lang en"><strong>Email:</strong> <a href="mailto:ajudatotal.je@gmail.com">ajudatotal.je@gmail.com</a></p>
-
-      <p class="lang pt" style="margin-top: 20px;">
-        Escreva o que está a sentir e o que gostaria de trabalhar. Responderei no prazo de 24 horas.
-      </p>
-
-      <p class="lang en" style="margin-top: 20px;">
-        Write what you're feeling and what you’d like to work on. I’ll respond within 24 hours.
-      </p>
-
-      <div style="margin-top: 30px;">
-        <a class="btn btn-primary lang pt" href="mailto:ajudatotal.je@gmail.com">Enviar mensagem</a>
-        <a class="btn btn-primary lang en" href="mailto:ajudatotal.je@gmail.com">Send message</a>
+  <section id="pricing">
+    <div class="container">
+      <h2 class="section-title">Pricing</h2>
+      <p class="sub">Simple packages for small businesses.</p>
+      <div class="grid pricing">
+        <div class="card">
+          <h3>Starter Site</h3>
+          <div class="price">£199</div>
+          <ul class="list">
+            <li>1-page website</li>
+            <li>Mobile-friendly design</li>
+            <li>Contact & WhatsApp buttons</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Business Chatbot</h3>
+          <div class="price">£99 + £10/mo</div>
+          <ul class="list">
+            <li>Website chatbot</li>
+            <li>Predefined answers</li>
+            <li>Leads sent to your email</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Pro Bundle</h3>
+          <div class="price">£349</div>
+          <ul class="list">
+            <li>Website + Chatbot</li>
+            <li>Basic SEO</li>
+            <li>Social setup</li>
+          </ul>
+        </div>
       </div>
-
     </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="grid">
+        <div class="card"><p>“Super quick and friendly service. Our customers get answers instantly.”</p><p><strong>— Local Café, St Helier</strong></p></div>
+        <div class="card"><p>“Website live in 3 days. Exactly what we needed for our carpentry business.”</p><p><strong>— B. Gomes Carpentry</strong></p></div>
+        <div class="card"><p>“Great value. The chatbot reduced our phone calls by half.”</p><p><strong>— Cleaning Services Jersey</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <div class="grid">
+        <div class="card"><h3>How fast is delivery?</h3><p>Typical delivery is 3–5 days depending on the package.</p></div>
+        <div class="card"><h3>Can you manage my site?</h3><p>Yes, we can maintain and update your site monthly if you prefer.</p></div>
+        <div class="card"><h3>Is WhatsApp included?</h3><p>We add WhatsApp buttons to your site and can connect the chatbot to it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="card contact-card">
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/447700704591" target="_blank" rel="noopener">07700 704591</a></p>
+        <p><strong>Email:</strong> <a href="mailto:apdigitalsolutions.je@outlook.com">apdigitalsolutions.je@outlook.com</a></p>
+        <div class="contact-links" style="margin-top:10px;">
+          <a class="cta" href="https://wa.me/447700704591" target="_blank" rel="noopener" style="text-decoration:none;">Start WhatsApp Chat</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AP Digital Solutions | Jersey, Channel Islands</p>
+  </footer>
+
+  <div class="chatbox" aria-live="polite">
+    <div class="chatbox-header">AP Chat Assistant <span class="badge">Demo</span></div>
+    <div id="chat-messages" class="chatbox-messages">
+      <div class="msg bot"><div class="bubble">Hi! I’m the AP assistant. Ask me about chatbots, websites, prices, or delivery time.</div></div>
+    </div>
+
+    <form id="chat-form" class="chatbox-input">
+      <input id="chat-input" type="text" placeholder="Type a message..." aria-label="Type a message" />
+      <button type="submit">Send</button>
+    </form>
   </div>
-</section>
 
-</main>
+  <script>
+    const messages = document.getElementById('chat-messages');
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('chat-input');
 
-<footer>
-  <p>&copy; 2025 AJUDATOTAL.JE – Saúde Mental &amp; Bem-estar. 
-    <span class="lang pt">Todos os direitos reservados.</span>
-    <span class="lang en">All rights reserved.</span>
-  </p>
-</footer>
-
-<!-- LANGUAGE & MENU SCRIPT -->
-<script>
-  // estado inicial: Português
-  document.body.classList.add('lang-pt');
-
-  const btn = document.getElementById("lang-switch");
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-
-  btn.addEventListener("click", () => {
-    if (document.body.classList.contains("lang-pt")) {
-      document.body.classList.remove("lang-pt");
-      document.body.classList.add("lang-en");
-      btn.textContent = "PT";
-    } else {
-      document.body.classList.remove("lang-en");
-      document.body.classList.add("lang-pt");
-      btn.textContent = "EN";
+    function addMessage(role, text) {
+      const wrap = document.createElement('div');
+      wrap.className = 'msg ' + (role === 'user' ? 'user' : 'bot');
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.textContent = text;
+      wrap.appendChild(bubble);
+      messages.appendChild(wrap);
+      messages.scrollTop = messages.scrollHeight;
     }
-  });
 
-  // Mobile menu
-  mobileMenuBtn.addEventListener('click', () => {
-    if (navLinks.style.display === 'flex') {
-      navLinks.style.display = 'none';
-    } else {
-      navLinks.style.display = 'flex';
+    function botReply(userText) {
+      const t = userText.toLowerCase();
+      if (t.includes('price') || t.includes('cost')) return 'Starter Site £199 · Chatbot £99 + £10/mo · Pro Bundle £349.';
+      if (t.includes('chatbot')) return 'We build website + WhatsApp chatbots with custom flows and AI. Delivery 3–5 days.';
+      if (t.includes('website')) return 'Simple, fast websites for phones and desktops. Hosting help included.';
+      if (t.includes('time') || t.includes('delivery')) return 'Typical delivery: 3–5 days depending on package.';
+      if (t.includes('whatsapp') || t.includes('contact')) return 'Message us on WhatsApp: 07700 704591.';
+      return 'Thanks! Want to continue on WhatsApp? 07700 704591';
     }
-  });
 
-  // Fecha menu mobile ao clicar num link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navLinks.style.display = 'none';
-      }
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+      addMessage('user', text);
+      input.value = '';
+      setTimeout(() => addMessage('bot', botReply(text)), 300);
     });
-  });
-
-  // Ajusta ao redimensionar
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      navLinks.style.display = 'flex';
-    } else {
-      navLinks.style.display = 'none';
-    }
-  });
-</script>
+  </script>
 
 </body>
-  </html>
+</html>
