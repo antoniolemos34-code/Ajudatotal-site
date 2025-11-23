@@ -1,1053 +1,944 @@
 <!DOCTYPE html>
-<html lang="pt" data-lang="pt">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>AJUDATOTAL.JE – Saúde Mental para a Vida Moderna</title>
 
-  <meta name="description" content="AJUDATOTAL.JE apoia saúde mental e bem-estar emocional com sessões estruturadas para ansiedade, stress, autoestima e relações. Sessões online ou presenciais em Jersey.">
-
+  <meta name="description" content="AJUDATOTAL.JE apoia saúde mental e bem-estar emocional com sessões estruturadas para ansiedade, stress, autoestima e relações. Atendimentos online ou presenciais.">
+  
   <!-- Open Graph -->
   <meta property="og:title" content="AJUDATOTAL.JE – Saúde Mental para a Vida Moderna">
-  <meta property="og:description" content="Apoio discreto para ansiedade, stress, cansaço emocional, autoestima baixa e relações difíceis. Sessões online ou presenciais em Jersey.">
+  <meta property="og:description" content="Apoio discreto para cuidar da sua saúde mental. Ansiedade, stress, cansaço emocional, autoestima baixa ou relações difíceis.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://images.pexels.com/photos/2821220/pexels-photo-2821220.jpeg">
-
+  
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
-
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f3f4f6;
-      --bg-soft: #ffffff;
-      --bg-soft-alt: #e5edf4;
-
-      --text-main: #0f172a;
-      --text-muted: #6b7280;
-      --text-soft: #9ca3af;
-
-      --accent-main: #4a6fa5;
-      --accent-soft: #7fa2d4;
-      --accent-green: #6b8c42;
-      --accent-warm: #c19a6b;
-
-      --border-soft: #d1d5db;
-      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.12);
-
-      --radius-xl: 26px;
-      --radius-lg: 18px;
-      --radius-md: 12px;
+      --primary: #4A6FA5;
+      --primary-dark: #3A5A8C;
+      --primary-light: #5B7FB5;
+      --secondary: #6B8C42;
+      --accent: #C19A6B;
+      --light: #F8F9FA;
+      --dark: #2C3E50;
+      --gray: #6C757D;
+      --white: #FFFFFF;
+      --transition: all 0.3s ease;
+      --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      --radius: 12px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
 
     html {
       scroll-behavior: smooth;
-      background: var(--bg);
     }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text-main);
-      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
       line-height: 1.6;
     }
 
-    h1, h2, h3, h4 {
-      font-family: "Playfair Display", serif;
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
       font-weight: 600;
-      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
     }
 
-    a { color: inherit; text-decoration: none; }
-
-    /* Language system */
-    .lang-en { display: none; }
-    html[data-lang="en"] .lang-en { display: inline; }
-    html[data-lang="en"] .lang-en.block { display: block; }
-    html[data-lang="en"] .lang-en.flex { display: flex; }
-    html[data-lang="en"] .lang-en.inline-block { display: inline-block; }
-
-    html[data-lang="en"] .lang-pt { display: none; }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
+    h1 {
+      font-size: 2.8rem;
     }
 
-    /* HEADER */
+    h2 {
+      font-size: 2.2rem;
+      position: relative;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--gray);
+    }
+
+    a { 
+      color: var(--primary); 
+      text-decoration: none; 
+      transition: var(--transition);
+    }
+
+    a:hover { 
+      color: var(--primary-dark); 
+    }
+
+    /* SISTEMA DE LÍNGUAS */
+    .lang { display: none; }
+    body.lang-pt .lang.pt { display: block; }
+    body.lang-en .lang.en { display: block; }
+
+    /* Header */
     header {
       position: sticky;
       top: 0;
-      z-index: 40;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom, rgba(243,244,246,0.96), rgba(243,244,246,0.9));
-      border-bottom: 1px solid rgba(209,213,219,0.9);
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     }
 
     .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
-      gap: 18px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      gap: 20px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
     }
 
     .brand-mark {
       width: 40px;
       height: 40px;
-      border-radius: 16px;
-      background: radial-gradient(circle at 30% 20%, #e5edf9, #4a6fa5);
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      color: #f9fafb;
-      box-shadow: 0 8px 22px rgba(15,23,42,0.3);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .brand-text span:first-child {
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      font-weight: 600;
-    }
-
-    .brand-text span:last-child {
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--text-main);
+      box-shadow: 0 4px 10px rgba(74, 111, 165, 0.3);
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.9rem;
+      gap: 25px;
     }
 
     .nav-links a {
-      color: var(--text-muted);
+      color: var(--dark);
+      font-weight: 500;
       position: relative;
-      padding-bottom: 2px;
     }
 
-    .nav-links a::after {
-      content: "";
+    .nav-links a:after {
+      content: '';
       position: absolute;
+      bottom: -5px;
       left: 0;
-      bottom: 0;
       width: 0;
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent-main), var(--accent-soft));
-      transition: width 0.2s ease-out;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
     }
 
-    .nav-links a:hover {
-      color: var(--text-main);
+    .nav-links a:hover:after {
+      width: 100%;
     }
 
-    .nav-links a:hover::after { width: 100%; }
-
-    .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      padding: 3px;
-      background: #ffffff;
-      font-size: 0.75rem;
-      gap: 2px;
-      box-shadow: 0 6px 16px rgba(148,163,184,0.3);
-    }
-
-    .lang-btn {
-      border-radius: 999px;
-      padding: 4px 10px;
-      border: none;
+    #lang-switch {
+      border: 1px solid var(--primary);
+      padding: 8px 16px;
+      border-radius: 20px;
       background: transparent;
-      color: var(--text-soft);
+      color: var(--primary);
       cursor: pointer;
-      font: inherit;
-      opacity: 0.7;
+      font-weight: 500;
+      transition: var(--transition);
+      white-space: nowrap;
     }
 
-    .lang-btn.active {
-      background: linear-gradient(135deg, var(--accent-main), var(--accent-soft));
-      color: #f9fafb;
-      opacity: 1;
-      font-weight: 600;
+    #lang-switch:hover {
+      background: var(--primary);
+      color: var(--white);
     }
 
-    @media (max-width: 768px) {
-      .nav { padding-inline: 14px; }
-      .nav-links { display: none; }   /* esconde só os links, não o botão PT/EN */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section { 
+      padding: 80px 0; 
     }
 
     /* HERO */
-    .hero-wrapper {
+    .hero {
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, var(--light) 0%, #E8EFF5 100%);
       position: relative;
-      min-height: 80vh;
-      padding: 48px 0 60px;
-      background: radial-gradient(circle at top, #ffffff 0, #e5edf4 55%);
-      border-bottom: 1px solid var(--border-soft);
+      overflow: hidden;
     }
 
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero-layout { grid-template-columns: 1fr; }
-    }
-
-    .hero-text-block { padding-right: 10px; }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: rgba(255,255,255,0.9);
-      color: var(--text-soft);
-      font-size: 0.75rem;
-      margin-bottom: 14px;
-      box-shadow: 0 10px 26px rgba(148,163,184,0.35);
-    }
-
-    .hero-kicker-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle, #22c55e, #15803d);
-    }
-
-    .hero-title {
-      font-size: clamp(2.2rem, 4vw, 3.1rem);
-      line-height: 1.15;
-      margin-bottom: 14px;
-      color: var(--text-main);
-    }
-
-    .hero-title span.hl {
-      color: var(--accent-main);
-      position: relative;
-    }
-
-    .hero-title span.hl::after {
-      content: "";
+    .hero:before {
+      content: '';
       position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(74, 111, 165, 0.05);
+      border-radius: 50%;
+    }
+
+    .hero:after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(107, 140, 66, 0.05);
+      border-radius: 50%;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .hero h1 span { 
+      color: var(--primary); 
+      position: relative;
+    }
+
+    .hero h1 span:after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
       left: 0;
-      bottom: 4px;
       width: 100%;
-      height: 7px;
-      background: rgba(74,111,165,0.18);
+      height: 8px;
+      background: rgba(74, 111, 165, 0.2);
       z-index: -1;
-      border-radius: 999px;
     }
 
-    .hero-sub {
-      color: var(--text-muted);
-      font-size: 0.98rem;
-      max-width: 540px;
-      margin-bottom: 24px;
+    .hero p {
+      color: var(--gray);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 90%;
     }
 
-    .hero-cta-row {
+    .hero-cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      font-size: 1rem;
     }
 
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 22px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent-main), var(--accent-soft));
-      color: #f9fafb;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      box-shadow: 0 16px 34px rgba(74,111,165,0.45);
-      cursor: pointer;
-      text-decoration: none;
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(74, 111, 165, 0.4);
     }
 
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: #ffffff;
-      color: var(--text-main);
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .hero-note {
+      color: var(--gray);
       font-size: 0.9rem;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 10px 24px rgba(148,163,184,0.3);
     }
 
-    .hero-meta {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-    }
-
-    .hero-media-card {
-      border-radius: var(--radius-xl);
+    .hero-media {
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      background: #000;
-      border: 1px solid rgba(15,23,42,0.12);
-      position: relative;
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+      transition: var(--transition);
     }
 
-    .hero-media-card img {
+    .hero-media:hover {
+      transform: rotate(0deg);
+    }
+
+    .hero-media img {
       width: 100%;
-      height: 100%;
-      max-height: 420px;
+      height: 400px;
       object-fit: cover;
       display: block;
     }
 
-    .hero-media-caption {
-      position: absolute;
-      left: 16px;
-      bottom: 14px;
-      right: 16px;
-      font-size: 0.78rem;
-      color: #e5e7eb;
-      text-shadow: 0 8px 18px rgba(0,0,0,0.9);
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: flex-end;
+    /* TITLES */
+    .section-title { 
+      text-align: center; 
+      font-size: 2.2rem; 
+      margin-bottom: 15px; 
     }
 
-    .hero-media-caption span.domain { font-weight: 600; }
-
-    @media (max-width: 600px) {
-      .hero-wrapper { padding-top: 32px; }
-      .hero-media-caption { flex-direction: column; align-items: flex-start; }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      margin: 15px auto 0;
+      border-radius: 2px;
     }
 
-    /* SECTIONS BASE */
-    main { background: var(--bg); }
-
-    section { padding: 70px 0; }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 32px;
+    .section-sub { 
+      text-align: center; 
+      color: var(--gray); 
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .section-kicker {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
-      color: var(--text-soft);
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-
-    .section-sub {
-      max-width: 560px;
-      margin: 0 auto;
-      font-size: 0.96rem;
-      color: var(--text-muted);
-    }
-
+    /* GRID / CARDS */
     .grid {
       display: grid;
-      gap: 22px;
-    }
-
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    @media (max-width: 900px) {
-      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .card {
-      background: var(--bg-soft);
-      border-radius: var(--radius-lg);
-      padding: 20px 20px 18px;
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 10px 28px rgba(148,163,184,0.22);
-      position: relative;
-      overflow: hidden;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px 25px;
+      transition: var(--transition);
+      border-top: 4px solid var(--primary);
     }
 
-    .card-kicker {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-soft);
-      margin-bottom: 6px;
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
 
-    .card-title {
-      font-size: 1.08rem;
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .list { 
+      padding-left: 20px; 
+      color: var(--gray); 
+    }
+
+    .list li {
       margin-bottom: 8px;
     }
 
-    .card-body {
+    /* TWO COL */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 50px;
+      align-items: start;
+    }
+
+    .pill-row { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+      margin-top: 15px; 
+    }
+
+    .pill { 
+      padding: 8px 16px; 
+      border-radius: 50px; 
+      border: 1px solid var(--primary); 
+      color: var(--primary); 
+      background: rgba(74, 111, 165, 0.1);
       font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 10px;
+      font-weight: 500;
     }
 
-    .card-list {
-      list-style: none;
-      margin: 0;
-      padding-left: 0;
-      font-size: 0.84rem;
-      color: var(--text-soft);
-    }
-
-    .card-list li {
-      display: flex;
-      gap: 6px;
+    .step { 
+      display: flex; 
+      gap: 15px; 
+      margin-bottom: 25px; 
       align-items: flex-start;
-      margin-bottom: 6px;
     }
 
-    .card-list li::before {
-      content: "•";
-      color: var(--accent-main);
-      font-size: 1rem;
-      line-height: 1;
-      margin-top: 1px;
-    }
-
-    /* PROCESS SECTION */
-    .process-section {
-      background: linear-gradient(to bottom, #e5edf4, #f3f4f6);
-      border-top: 1px solid var(--border-soft);
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .process-step {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 14px 0;
-      border-bottom: 1px dashed var(--border-soft);
-    }
-
-    .process-step:last-child { border-bottom: none; }
-
-    .step-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      border: 1px solid var(--accent-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: var(--accent-main);
-      background: #eff4fb;
+    .step-number { 
+      width: 40px; 
+      height: 40px; 
+      border-radius: 50%; 
+      border: 2px solid var(--primary); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 1rem; 
+      color: var(--primary); 
+      font-weight: 600;
       flex-shrink: 0;
     }
 
-    .step-body-title {
-      font-size: 0.95rem;
-      margin-bottom: 4px;
-      font-weight: 500;
-      color: var(--text-main);
+    .step-text { 
+      color: var(--gray); 
+      font-size: 1rem; 
     }
 
-    .step-body-text {
-      font-size: 0.86rem;
-      color: var(--text-muted);
+    .step-text strong {
+      color: var(--dark);
+      display: block;
+      margin-bottom: 5px;
     }
 
     .notice {
-      margin-top: 16px;
-      padding: 12px 13px;
-      border-radius: var(--radius-md);
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      font-size: 0.82rem;
-      color: #7c2d12;
+      background: #FFF3E0;
+      border: 1px solid #FFB74D;
+      color: #E65100;
+      padding: 15px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      margin-top: 20px;
     }
 
     /* CONTACT */
-    .contact-grid {
-      display: grid;
-      gap: 22px;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-    }
-
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; }
-    }
-
     .contact-card {
-      background: var(--bg-soft);
-      border-radius: var(--radius-lg);
-      padding: 22px 20px 20px;
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .contact-label {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      margin-bottom: 6px;
-    }
-
-    .contact-main-text {
-      font-size: 0.96rem;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-
-    .email-link {
-      color: var(--accent-main);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
     }
 
     footer {
-      border-top: 1px solid var(--border-soft);
-      padding: 18px 20px 26px;
-      background: #0f172a;
-      font-size: 0.8rem;
-      color: #e5e7eb;
+      padding: 40px 20px;
       text-align: center;
+      font-size: 0.9rem;
+      color: var(--gray);
+      background: var(--dark);
+      color: var(--white);
     }
 
-    footer a { color: #e5e7eb; }
+    footer a {
+      color: var(--white);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-media {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero-cta {
+        justify-content: center;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        padding: 100px 0 60px;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+      }
+      
+      .contact-card {
+        padding: 25px 20px;
+      }
+    }
   </style>
 </head>
 
-<body>
-  <header>
-    <div class="nav container">
-      <div class="nav-left">
-        <a href="#top" class="brand" aria-label="AJUDATOTAL.JE">
-          <div class="brand-mark">🧠</div>
-          <div class="brand-text">
-            <span>AJUDATOTAL.JE</span>
-            <span class="lang-pt">Saúde mental em Jersey</span>
-            <span class="lang-en">Mental health in Jersey</span>
-          </div>
-        </a>
-
-        <nav class="nav-links">
-          <a href="#why">
-            <span class="lang-pt">Porquê cuidar</span>
-            <span class="lang-en">Why care</span>
-          </a>
-          <a href="#support">
-            <span class="lang-pt">Áreas de apoio</span>
-            <span class="lang-en">Support areas</span>
-          </a>
-          <a href="#process">
-            <span class="lang-pt">Como funciona</span>
-            <span class="lang-en">How it works</span>
-          </a>
-          <a href="#contact">
-            <span class="lang-pt">Contacto</span>
-            <span class="lang-en">Contact</span>
-          </a>
-        </nav>
-      </div>
-
-      <!-- Botão PT/EN SEMPRE VISÍVEL -->
-      <div class="lang-switch" aria-label="Language switcher">
-        <button class="lang-btn active" data-lang-target="pt">PT</button>
-        <button class="lang-btn" data-lang-target="en">EN</button>
-      </div>
+<body class="lang-pt">
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-mark">AJ</div>
+      <div>AJUDATOTAL.JE</div>
     </div>
-  </header>
+    
+    <nav class="nav-links">
+      <a href="#saude-mental" class="lang pt">Saúde Mental</a>
+      <a href="#saude-mental" class="lang en">Mental Health</a>
+      <a href="#apoio" class="lang pt">Áreas de Apoio</a>
+      <a href="#apoio" class="lang en">Support Areas</a>
+      <a href="#como-funciona" class="lang pt">Como Funciona</a>
+      <a href="#como-funciona" class="lang en">How It Works</a>
+      <a href="#contacto" class="lang pt">Contacto</a>
+      <a href="#contacto" class="lang en">Contact</a>
+    </nav>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero-wrapper">
-      <div class="container hero-layout">
-        <div class="hero-text-block">
-          <div class="hero-kicker">
-            <span class="hero-kicker-dot"></span>
-            <span class="lang-pt">Saúde mental · Bem-estar · Vida real</span>
-            <span class="lang-en">Mental health · Well-being · Real life</span>
-          </div>
+    <button class="mobile-menu-btn">☰</button>
+    <button id="lang-switch">EN</button>
+  </div>
+</header>
 
-          <h1 class="hero-title">
-            <span class="lang-pt">
-              Apoio discreto para cuidar da sua <span class="hl">saúde mental</span>.
-            </span>
-            <span class="lang-en">
-              Discreet support to care for your <span class="hl">mental health</span>.
-            </span>
-          </h1>
+<main>
 
-          <p class="hero-sub">
-            <span class="lang-pt">
-              Ansiedade, stress, cansaço emocional, autoestima baixa ou relações difíceis. Um espaço seguro e sem julgamentos para falar do que realmente está a acontecer consigo.
-            </span>
-            <span class="lang-en">
-              Anxiety, stress, emotional fatigue, low self-esteem or difficult relationships. A safe, non-judgmental space to talk about what is really happening with you.
-            </span>
-          </p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
 
-          <div class="hero-cta-row">
-            <a href="#contact" class="btn-primary">
-              <span class="lang-pt">Marcar conversa inicial</span>
-              <span class="lang-en">Book an initial conversation</span>
-              <span>↗</span>
-            </a>
+    <!-- PT -->
+    <div class="lang pt">
+      <div class="hero-eyebrow">Saúde mental • Bem-estar • Vida real</div>
+      <h1>Apoio discreto para cuidar da sua <span>saúde mental</span>.</h1>
+      <p>Ansiedade, stress, cansaço emocional, autoestima baixa ou relações difíceis. Ofereço um espaço seguro e sem julgamentos para explorar e superar estes desafios.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contacto">Marcar conversa inicial</a>
+        <a class="btn btn-secondary" href="#saude-mental">Ver como posso ajudar</a>
+      </div>
+      <p class="hero-note">Sessões online ou presenciais em Jersey. Resposta por email em até 24 horas.</p>
+    </div>
 
-            <a href="#why" class="btn-secondary">
-              <span class="lang-pt">Ver como posso ajudar</span>
-              <span class="lang-en">See how I can help</span>
-            </a>
-          </div>
+    <!-- EN -->
+    <div class="lang en">
+      <div class="hero-eyebrow">Mental health • Well-being • Real life</div>
+      <h1>Discreet support to care for your <span>mental health</span>.</h1>
+      <p>Anxiety, stress, emotional fatigue, low self-esteem or difficult relationships. I offer a safe, non-judgemental space to explore and overcome these challenges.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contacto">Book an initial conversation</a>
+        <a class="btn btn-secondary" href="#saude-mental">See how I can help</a>
+      </div>
+      <p class="hero-note">Online or in-person sessions in Jersey. Email reply within 24 hours.</p>
+    </div>
 
-          <p class="hero-meta">
-            <span class="lang-pt">Sessões online ou presenciais em Jersey. Resposta por email em até 24 horas.</span>
-            <span class="lang-en">Online or in-person sessions in Jersey. Email reply within 24 hours.</span>
-          </p>
+    <div class="hero-media">
+      <img src="https://images.pexels.com/photos/2821220/pexels-photo-2821220.jpeg" alt="Pessoa em sessão de terapia">
+    </div>
+
+  </div>
+</section>
+
+<!-- SAÚDE MENTAL -->
+<section id="saude-mental">
+  <div class="container">
+
+    <h2 class="section-title lang pt">Porque cuidar da saúde mental?</h2>
+    <h2 class="section-title lang en">Why take care of your mental health?</h2>
+
+    <p class="section-sub lang pt">Falar com alguém de fora ajuda a ganhar espaço, perspetiva e clareza emocional.</p>
+    <p class="section-sub lang en">Talking to someone from the outside helps you gain space, perspective and emotional clarity.</p>
+
+    <div class="two-col">
+
+      <div>
+        <div class="lang pt">
+          <h3>Não é preciso esperar pela crise</h3>
+          <p>Muitas pessoas aguentam demasiado tempo antes de procurar ajuda. A saúde mental é como a física – beneficia de cuidado preventivo.</p>
+          <br>
+          <h3>O processo é colaborativo</h3>
+          <p>O objetivo não é "consertar" ninguém, mas sim construir ferramentas e estratégias para navegar desafios de forma mais eficaz.</p>
         </div>
 
-        <div class="hero-media-card">
-          <img src="https://images.pexels.com/photos/2821220/pexels-photo-2821220.jpeg" alt="Sessão de apoio emocional">
-          <div class="hero-media-caption">
-            <span>
-              <span class="lang-pt">Ambiente calmo · Foco em segurança emocional</span>
-              <span class="lang-en">Calm environment · Focus on emotional safety</span>
-            </span>
-            <span class="domain">ajudatotal.je</span>
-          </div>
+        <div class="lang en">
+          <h3>You don't need to wait for a crisis</h3>
+          <p>Many people hold everything in for too long before seeking help. Mental health is like physical health – it benefits from preventive care.</p>
+          <br>
+          <h3>A collaborative process</h3>
+          <p>The goal is not to “fix” anyone, but to build tools and strategies so you can handle challenges more effectively.</p>
         </div>
       </div>
-    </section>
 
-    <!-- WHY -->
-    <section id="why">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">
-            <span class="lang-pt">Porque cuidar da saúde mental</span>
-            <span class="lang-en">Why care about mental health</span>
-          </div>
-          <h2 class="section-title">
-            <span class="lang-pt">Não precisa esperar por uma crise para pedir ajuda.</span>
-            <span class="lang-en">You don’t need to wait for a crisis to ask for help.</span>
-          </h2>
-          <p class="section-sub">
-            <span class="lang-pt">
-              Falar com alguém de fora ajuda a ganhar espaço, perspetiva e clareza emocional. Cuidar da saúde mental é um investimento em como vive o seu dia-a-dia.
-            </span>
-            <span class="lang-en">
-              Talking to someone from the outside helps create space, perspective and emotional clarity. Taking care of your mental health is an investment in how you live your everyday life.
-            </span>
-          </p>
-        </div>
-
-        <div class="grid grid-3">
-          <article class="card">
-            <div class="card-kicker">
-              <span class="lang-pt">Apoio discreto</span>
-              <span class="lang-en">Discreet support</span>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-pt">Um espaço seguro, sem rótulos</span>
-              <span class="lang-en">A safe space, without labels</span>
-            </h3>
-            <p class="card-body">
-              <span class="lang-pt">
-                Pode falar de tudo: ansiedade, medo, cansaço, culpa, frustração. O foco está em compreender o que sente e dar nome ao que está a acontecer.
-              </span>
-              <span class="lang-en">
-                You can talk about everything: anxiety, fear, exhaustion, guilt, frustration. The focus is on understanding what you feel and naming what is happening.
-              </span>
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-kicker">
-              <span class="lang-pt">Vida real</span>
-              <span class="lang-en">Real life</span>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-pt">Sem teorias complicadas</span>
-              <span class="lang-en">No complicated theory</span>
-            </h3>
-            <p class="card-body">
-              <span class="lang-pt">
-                Trabalhamos com exemplos concretos do seu dia-a-dia: trabalho, família, relações, rotina e hábitos. Pequenos ajustes constantes geram mudanças reais.
-              </span>
-              <span class="lang-en">
-                We work with concrete examples from your daily life: work, family, relationships, routines and habits. Small consistent adjustments bring real change.
-              </span>
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-kicker">
-              <span class="lang-pt">Bilingue</span>
-              <span class="lang-en">Bilingual</span>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-pt">Atendimento em português e inglês</span>
-              <span class="lang-en">Support in Portuguese and English</span>
-            </h3>
-            <p class="card-body">
-              <span class="lang-pt">
-                Pode escolher a língua em que se sente mais à vontade para se expressar: português europeu ou inglês.
-              </span>
-              <span class="lang-en">
-                You can choose the language in which you feel most comfortable expressing yourself: European Portuguese or English.
-              </span>
-            </p>
-          </article>
-        </div>
+      <div class="card">
+        <h3 class="lang pt">Sinais de que pode precisar de ajuda</h3>
+        <h3 class="lang en">Signs you may need support</h3>
+        <ul class="list">
+          <li class="lang pt">Ansiedade diária e persistente</li>
+          <li class="lang en">Daily and persistent anxiety</li>
+          
+          <li class="lang pt">Stress constante e sensação de sobrecarga</li>
+          <li class="lang en">Constant stress and feeling overwhelmed</li>
+          
+          <li class="lang pt">Autoestima baixa e autocrítica excessiva</li>
+          <li class="lang en">Low self-esteem and harsh self-criticism</li>
+          
+          <li class="lang pt">Dificuldade em estabelecer limites</li>
+          <li class="lang en">Difficulty setting boundaries</li>
+          
+          <li class="lang pt">Isolamento e dificuldade em conectar</li>
+          <li class="lang en">Isolation and difficulty connecting with others</li>
+        </ul>
       </div>
-    </section>
 
-    <!-- SUPPORT -->
-    <section id="support">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">
-            <span class="lang-pt">Áreas de apoio</span>
-            <span class="lang-en">Support areas</span>
-          </div>
-          <h2 class="section-title">
-            <span class="lang-pt">Temas que podemos trabalhar juntos.</span>
-            <span class="lang-en">Topics we can work on together.</span>
-          </h2>
-        </div>
+    </div>
+  </div>
+</section>
 
-        <div class="grid grid-3">
-          <article class="card">
-            <div class="card-kicker">
-              <span class="lang-pt">Ansiedade &amp; Stress</span>
-              <span class="lang-en">Anxiety &amp; Stress</span>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-pt">Quando a cabeça não desliga</span>
-              <span class="lang-en">When your mind won’t switch off</span>
-            </h3>
-            <p class="card-body">
-              <span class="lang-pt">
-                Identificar gatilhos, compreender padrões de pensamento e criar estratégias de regulação emocional para o dia-a-dia.
-              </span>
-              <span class="lang-en">
-                Identify triggers, understand thinking patterns and create emotional regulation strategies for everyday life.
-              </span>
-            </p>
-            <ul class="card-list">
-              <li class="lang-pt">Preocupação constante e antecipação do pior.</li>
-              <li class="lang-en">Constant worry and expecting the worst.</li>
-              <li class="lang-pt">Tensão física, insónia e dificuldade em relaxar.</li>
-              <li class="lang-en">Physical tension, insomnia and difficulty relaxing.</li>
-            </ul>
-          </article>
+<!-- APOIO -->
+<section id="apoio">
+  <div class="container">
+    <h2 class="section-title lang pt">Áreas em que posso ajudar</h2>
+    <h2 class="section-title lang en">Areas where I can help</h2>
 
-          <article class="card">
-            <div class="card-kicker">
-              <span class="lang-pt">Autoestima &amp; Autocrítica</span>
-              <span class="lang-en">Self-esteem &amp; Self-criticism</span>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-pt">Uma voz interna mais gentil</span>
-              <span class="lang-en">A kinder inner voice</span>
-            </h3>
-            <p class="card-body">
-              <span class="lang-pt">
-                Trabalhar a forma como fala consigo mesmo(a), reconhecer capacidades e aprender a validar o próprio esforço.
-              </span>
-              <span class="lang-en">
-                Work on how you speak to yourself, recognise your strengths and learn to validate your own effort.
-              </span>
-            </p>
-            <ul class="card-list">
-              <li class="lang-pt">Sensação de nunca ser suficiente.</li>
-              <li class="lang-en">Feeling like you’re never enough.</li>
-              <li class="lang-pt">Dificuldade em receber elogios ou reconhecer progressos.</li>
-              <li class="lang-en">Difficulty accepting praise or seeing progress.</li>
-            </ul>
-          </article>
+    <p class="section-sub lang pt">Apoio focado na sua saúde mental com abordagem prática e personalizada.</p>
+    <p class="section-sub lang en">Support focused on your mental well-being with a practical, personalised approach.</p>
 
-          <article class="card">
-            <div class="card-kicker">
-              <span class="lang-pt">Relações &amp; Limites</span>
-              <span class="lang-en">Relationships &amp; Boundaries</span>
-            </div>
-            <h3 class="card-title">
-              <span class="lang-pt">Cuidar de si nas relações</span>
-              <span class="lang-en">Taking care of yourself in relationships</span>
-            </h3>
-            <p class="card-body">
-              <span class="lang-pt">
-                Explorar padrões de relacionamento e aprender a dizer “não” sem culpa, mantendo ligações mais equilibradas.
-              </span>
-              <span class="lang-en">
-                Explore relationship patterns and learn to say “no” without guilt, while keeping more balanced connections.
-              </span>
-            </p>
-            <ul class="card-list">
-              <li class="lang-pt">Dificuldade em colocar limites claros.</li>
-              <li class="lang-en">Difficulty setting clear boundaries.</li>
-              <li class="lang-pt">Conflitos frequentes ou evitados em excesso.</li>
-              <li class="lang-en">Frequent or overly avoided conflict.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div class="grid">
 
-    <!-- PROCESS -->
-    <section id="process" class="process-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">
-            <span class="lang-pt">Como funciona</span>
-            <span class="lang-en">How it works</span>
-          </div>
-          <h2 class="section-title">
-            <span class="lang-pt">Do primeiro email ao acompanhamento contínuo.</span>
-            <span class="lang-en">From first email to ongoing support.</span>
-          </h2>
-        </div>
+      <!-- CARD 1 -->
+      <article class="card">
+        <img src="https://images.pexels.com/photos/3972441/pexels-photo-3972441.jpeg" alt="Pessoa a lidar com ansiedade" />
 
-        <div class="grid grid-2">
-          <div>
-            <div class="process-step">
-              <div class="step-number">1</div>
-              <div>
-                <div class="step-body-title">
-                  <span class="lang-pt">Primeiro contacto</span>
-                  <span class="lang-en">First contact</span>
-                </div>
-                <p class="step-body-text">
-                  <span class="lang-pt">
-                    Envia um email a explicar, em poucas linhas, o que está a viver e que tipo de apoio procura.
-                  </span>
-                  <span class="lang-en">
-                    Send an email briefly explaining what you’re going through and what kind of support you are looking for.
-                  </span>
-                </p>
-              </div>
-            </div>
+        <h3 class="lang pt">Ansiedade &amp; Stress</h3>
+        <h3 class="lang en">Anxiety &amp; Stress</h3>
 
-            <div class="process-step">
-              <div class="step-number">2</div>
-              <div>
-                <div class="step-body-title">
-                  <span class="lang-pt">Conversa inicial</span>
-                  <span class="lang-en">Initial conversation</span>
-                </div>
-                <p class="step-body-text">
-                  <span class="lang-pt">
-                    Agendamos uma primeira sessão para perceber melhor a situação e alinhar expectativas.
-                  </span>
-                  <span class="lang-en">
-                    We schedule a first session to understand your situation in more detail and align expectations.
-                  </span>
-                </p>
-              </div>
+        <p class="lang pt">Identificar gatilhos, desenvolver estratégias de coping e organizar pensamentos para reduzir a ansiedade no dia a dia.</p>
+        <p class="lang en">Identify triggers, develop coping strategies and organise thoughts to reduce day-to-day anxiety.</p>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card">
+        <img src="https://images.pexels.com/photos/3972467/pexels-photo-3972467.jpeg" alt="Pessoa a refletir sobre autoestima" />
+
+        <h3 class="lang pt">Autoestima &amp; Autoconfiança</h3>
+        <h3 class="lang en">Self-esteem &amp; Confidence</h3>
+
+        <p class="lang pt">Construir uma voz interna mais gentil e realista, reconhecendo o seu valor e capacidades.</p>
+        <p class="lang en">Build a kinder, more realistic inner voice, recognising your value and strengths.</p>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card">
+        <img src="https://images.pexels.com/photos/2821220/pexels-photo-2821220.jpeg" alt="Pessoas em relacionamento" />
+
+        <h3 class="lang pt">Relações &amp; Limites</h3>
+        <h3 class="lang en">Relationships &amp; Boundaries</h3>
+
+        <p class="lang pt">Aprender a comunicar necessidades de forma assertiva e estabelecer limites saudáveis.</p>
+        <p class="lang en">Learn to communicate needs assertively and set healthy boundaries.</p>
+      </article>
+
+      <!-- CARD 4 -->
+      <article class="card">
+        <img src="https://images.pexels.com/photos/7640742/pexels-photo-7640742.jpeg" alt="Pessoa em rotina equilibrada" />
+
+        <h3 class="lang pt">Rotina &amp; Equilíbrio</h3>
+        <h3 class="lang en">Routine &amp; Balance</h3>
+
+        <p class="lang pt">Criar hábitos e rotinas que protegem a saúde mental e promovem bem-estar sustentável.</p>
+        <p class="lang en">Create habits and routines that protect your mental health and support sustainable well-being.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="container">
+    <h2 class="section-title lang pt">Como é o trabalho em conjunto?</h2>
+    <h2 class="section-title lang en">How does the process work?</h2>
+
+    <p class="section-sub lang pt">Simples, humano e focado nos seus objetivos.</p>
+    <p class="section-sub lang en">Simple, human and focused on your goals.</p>
+
+    <div class="two-col">
+
+      <div>
+        <!-- PT -->
+        <div class="lang pt">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <strong>Conversa inicial</strong>
+              <div>Uma oportunidade para explicar o que está a viver e conhecer a minha abordagem.</div>
             </div>
           </div>
-
-          <div>
-            <div class="process-step">
-              <div class="step-number">3</div>
-              <div>
-                <div class="step-body-title">
-                  <span class="lang-pt">Plano de trabalho</span>
-                  <span class="lang-en">Working plan</span>
-                </div>
-                <p class="step-body-text">
-                  <span class="lang-pt">
-                    Definimos em conjunto objetivos realistas e a frequência das sessões (semanal, quinzenal, etc.).
-                  </span>
-                  <span class="lang-en">
-                    Together we define realistic goals and the frequency of sessions (weekly, fortnightly, etc.).
-                  </span>
-                </p>
-              </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <strong>Definir objetivos</strong>
+              <div>Identificamos juntos o que gostaria de melhorar e onde quer chegar.</div>
             </div>
-
-            <div class="process-step">
-              <div class="step-number">4</div>
-              <div>
-                <div class="step-body-title">
-                  <span class="lang-pt">Acompanhamento</span>
-                  <span class="lang-en">Follow-up</span>
-                </div>
-                <p class="step-body-text">
-                  <span class="lang-pt">
-                    Ao longo do tempo, vamos ajustando a abordagem conforme as suas necessidades mudam.
-                  </span>
-                  <span class="lang-en">
-                    Over time, we adjust the approach as your needs change and evolve.
-                  </span>
-                </p>
-              </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <strong>Criar plano</strong>
+              <div>Desenvolvemos passos realistas e adaptados à sua situação específica.</div>
             </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-text">
+              <strong>Acompanhamento</strong>
+              <div>Ao longo do tempo, ajusto a estratégia conforme as suas necessidades evoluem.</div>
+            </div>
+          </div>
+        </div>
 
-            <div class="notice">
-              <p class="lang-pt">
-                <strong>Nota importante:</strong> Este apoio não substitui acompanhamento médico ou psicológico. Em situação de emergência, contacte os serviços de saúde ou emergência locais.
-              </p>
-              <p class="lang-en">
-                <strong>Important note:</strong> This support does not replace medical or psychological care. In an emergency, please contact local health or emergency services.
-              </p>
+        <!-- EN -->
+        <div class="lang en">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <strong>Initial conversation</strong>
+              <div>An opportunity to explain what you're going through and get to know my approach.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <strong>Define goals</strong>
+              <div>We identify together what you'd like to improve and where you want to get to.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <strong>Create a plan</strong>
+              <div>We create realistic steps tailored to your specific situation.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-text">
+              <strong>Follow-up</strong>
+              <div>Over time, we adjust the strategy as your needs evolve.</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">
-            <span class="lang-pt">Contacto</span>
-            <span class="lang-en">Contact</span>
+      <div>
+        <div class="card">
+          <h3 class="lang pt">Formatos disponíveis</h3>
+          <h3 class="lang en">Available formats</h3>
+          <div class="pill-row">
+            <span class="pill lang pt">Videochamada</span>
+            <span class="pill lang pt">Telefone</span>
+            <span class="pill lang pt">WhatsApp</span>
+            <span class="pill lang pt">Email</span>
+            <span class="pill lang pt">Presencial</span>
+
+            <span class="pill lang en">Video call</span>
+            <span class="pill lang en">Phone</span>
+            <span class="pill lang en">WhatsApp</span>
+            <span class="pill lang en">Email</span>
+            <span class="pill lang en">In person</span>
           </div>
-          <h2 class="section-title">
-            <span class="lang-pt">Dar o primeiro passo com calma.</span>
-            <span class="lang-en">Taking the first step, gently.</span>
-          </h2>
         </div>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <p class="contact-label">
-              <span class="lang-pt">Email</span>
-              <span class="lang-en">Email</span>
-            </p>
-            <p class="contact-main-text">
-              <a class="email-link" href="mailto:ajudatotal.je@gmail.com">ajudatotal.je@gmail.com</a>
-            </p>
-
-            <p class="contact-main-text">
-              <span class="lang-pt">
-                Pode escrever em português ou inglês. Partilhe um pouco da sua situação e o que gostaria de trabalhar nas sessões.
-              </span>
-              <span class="lang-en">
-                You can write in Portuguese or English. Share a little about your situation and what you would like to work on in the sessions.
-              </span>
-            </p>
-
-            <p class="contact-label">
-              <span class="lang-pt">Resposta</span>
-              <span class="lang-en">Reply</span>
-            </p>
-            <p class="contact-main-text">
-              <span class="lang-pt">
-                Receberá uma resposta no prazo máximo de 24 horas úteis com possíveis horários para a conversa inicial.
-              </span>
-              <span class="lang-en">
-                You will receive a reply within 24 business hours with possible times for the initial conversation.
-              </span>
-            </p>
-
-            <a class="btn-primary inline-block" href="mailto:ajudatotal.je@gmail.com">
-              <span class="lang-pt">Enviar email agora</span>
-              <span class="lang-en">Send email now</span>
-              <span>✉</span>
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <p class="contact-label">
-              <span class="lang-pt">Formato das sessões</span>
-              <span class="lang-en">Session formats</span>
-            </p>
-            <p class="contact-main-text">
-              <span class="lang-pt">
-                As sessões podem ser realizadas por videochamada, telefone ou presencialmente em Jersey, dependendo da disponibilidade.
-              </span>
-              <span class="lang-en">
-                Sessions can take place via video call, phone or face-to-face in Jersey, depending on availability.
-              </span>
-            </p>
-            <ul class="card-list">
-              <li class="lang-pt">Duração habitual: 50–60 minutos por sessão.</li>
-              <li class="lang-en">Usual length: 50–60 minutes per session.</li>
-              <li class="lang-pt">Idiomas: português europeu e inglês.</li>
-              <li class="lang-en">Languages: European Portuguese and English.</li>
-              <li class="lang-pt">Horários ajustados à sua rotina sempre que possível.</li>
-              <li class="lang-en">Session times adapted to your routine whenever possible.</li>
-            </ul>
-          </div>
+        
+        <div class="notice">
+          <p class="lang pt"><strong>Nota importante:</strong> Este serviço não substitui acompanhamento médico ou psicológico. Em caso de emergência, contacte os serviços de saúde.</p>
+          <p class="lang en"><strong>Important note:</strong> This service does not replace medical or psychological care. In an emergency, contact local health services immediately.</p>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    © 2025 AJUDATOTAL.JE – 
-    <span class="lang-pt">Saúde Mental &amp; Bem-estar. Todos os direitos reservados.</span>
-    <span class="lang-en">Mental Health &amp; Well-being. All rights reserved.</span>
-  </footer>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Switch PT/EN
-    const htmlEl = document.documentElement;
-    const langButtons = document.querySelectorAll('.lang-btn');
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container">
 
-    function setLang(lang) {
-      htmlEl.setAttribute('data-lang', lang);
-      langButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang-target === lang);
-      });
+    <h2 class="section-title lang pt">Dar o primeiro passo</h2>
+    <h2 class="section-title lang en">Take the first step</h2>
+
+    <p class="section-sub lang pt">Começamos exatamente onde está, sem julgamentos.</p>
+    <p class="section-sub lang en">We start exactly from where you are, without judgement.</p>
+
+    <div class="contact-card">
+
+      <p class="lang pt"><strong>Email:</strong> <a href="mailto:ajudatotal.je@gmail.com">ajudatotal.je@gmail.com</a></p>
+      <p class="lang en"><strong>Email:</strong> <a href="mailto:ajudatotal.je@gmail.com">ajudatotal.je@gmail.com</a></p>
+
+      <p class="lang pt" style="margin-top: 20px;">
+        Escreva o que está a sentir e o que gostaria de trabalhar. Responderei no prazo de 24 horas.
+      </p>
+
+      <p class="lang en" style="margin-top: 20px;">
+        Write what you're feeling and what you’d like to work on. I’ll respond within 24 hours.
+      </p>
+
+      <div style="margin-top: 30px;">
+        <a class="btn btn-primary lang pt" href="mailto:ajudatotal.je@gmail.com">Enviar mensagem</a>
+        <a class="btn btn-primary lang en" href="mailto:ajudatotal.je@gmail.com">Send message</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 AJUDATOTAL.JE – Saúde Mental &amp; Bem-estar. 
+    <span class="lang pt">Todos os direitos reservados.</span>
+    <span class="lang en">All rights reserved.</span>
+  </p>
+</footer>
+
+<!-- LANGUAGE & MENU SCRIPT -->
+<script>
+  // estado inicial: Português
+  document.body.classList.add('lang-pt');
+
+  const btn = document.getElementById("lang-switch");
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  btn.addEventListener("click", () => {
+    if (document.body.classList.contains("lang-pt")) {
+      document.body.classList.remove("lang-pt");
+      document.body.classList.add("lang-en");
+      btn.textContent = "PT";
+    } else {
+      document.body.classList.remove("lang-en");
+      document.body.classList.add("lang-pt");
+      btn.textContent = "EN";
     }
+  });
 
-    langButtons.forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.dataset.lang-target));
+  // Mobile menu
+  mobileMenuBtn.addEventListener('click', () => {
+    if (navLinks.style.display === 'flex') {
+      navLinks.style.display = 'none';
+    } else {
+      navLinks.style.display = 'flex';
+    }
+  });
+
+  // Fecha menu mobile ao clicar num link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navLinks.style.display = 'none';
+      }
     });
-  </script>
+  });
+
+  // Ajusta ao redimensionar
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.style.display = 'flex';
+    } else {
+      navLinks.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
-</html>
+  </html>
