@@ -6,7 +6,7 @@
   <title>AJUDATOTAL.JE – Apoio emocional para imigrantes em Jersey</title>
 
   <meta name="description"
-    content="AJUDATOTAL.JE oferece apoio emocional e desenvolvimento pessoal para imigrantes em Jersey. Sessões acessíveis, confidenciais e focadas em objetivos de vida. Português e Inglês.">
+        content="AJUDATOTAL.JE oferece apoio emocional e desenvolvimento pessoal para imigrantes em Jersey. Sessões acessíveis, confidenciais e focadas em objetivos de vida. Português e Inglês.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,19 +53,13 @@
       text-decoration: none;
     }
 
-    /* LANG SWITCH */
-    .en-only { display: none; }
-
-    body[data-lang="en"] .pt-only { display: none; }
-    body[data-lang="en"] .en-only { display: inline; }
-
-    /* LAYOUT */
-
     .page {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
+
+    /* HEADER */
 
     header {
       position: sticky;
@@ -595,10 +589,9 @@
       gap: 10px;
       flex-wrap: wrap;
     }
-
   </style>
 </head>
-<body data-lang="pt">
+<body>
 <div class="page">
 
   <!-- HEADER -->
@@ -609,31 +602,30 @@
         <div class="nav-title">
           <span>AJUDATOTAL.JE</span>
           <span class="pt-only">Apoio emocional em Jersey</span>
-          <span class="en-only">Emotional support in Jersey</span>
+          <span class="en-only" hidden>Emotional support in Jersey</span>
         </div>
       </div>
 
       <nav class="nav-links">
         <a href="#para-quem" class="pt-only">Para quem</a>
-        <a href="#para-quem" class="en-only">Who it's for</a>
+        <a href="#para-quem" class="en-only" hidden>Who it's for</a>
 
         <a href="#servicos" class="pt-only">Serviços</a>
-        <a href="#servicos" class="en-only">Services</a>
+        <a href="#servicos" class="en-only" hidden>Services</a>
 
         <a href="#sobre-luis" class="pt-only">Sobre</a>
-        <a href="#sobre-luis" class="en-only">About</a>
+        <a href="#sobre-luis" class="en-only" hidden>About</a>
 
         <a href="#contacto" class="pt-only">Contacto</a>
-        <a href="#contacto" class="en-only">Contact</a>
+        <a href="#contacto" class="en-only" hidden>Contact</a>
       </nav>
 
       <div class="nav-right">
         <div class="nav-tag pt-only">Sessões em Português & Inglês</div>
-        <div class="nav-tag en-only">Sessions in English & Portuguese</div>
+        <div class="nav-tag en-only" hidden>Sessions in English & Portuguese</div>
 
         <button class="lang-btn" id="langToggle">
-          <span>🌐</span>
-          EN
+          <span>🌐</span> EN
         </button>
       </div>
     </div>
@@ -647,7 +639,7 @@
           <div class="hero-tag">
             <span class="hero-tag-dot"></span>
             <span class="pt-only">Bem-estar emocional · Jersey</span>
-            <span class="en-only">Emotional wellbeing · Jersey</span>
+            <span class="en-only" hidden>Emotional wellbeing · Jersey</span>
           </div>
 
           <h1 class="hero-title">
@@ -655,7 +647,7 @@
               Apoio emocional e <span class="hero-highlight">conversas honestas</span>
               para imigrantes em Jersey.
             </span>
-            <span class="en-only">
+            <span class="en-only" hidden>
               Emotional support and <span class="hero-highlight">honest conversations</span>
               for immigrants in Jersey.
             </span>
@@ -666,7 +658,7 @@
             na ilha de Jersey, sentem o peso do dia-a-dia e precisam de um espaço seguro
             para falar, organizar ideias e ganhar novas estratégias para a vida real.
           </p>
-          <p class="hero-subtitle en-only">
+          <p class="hero-subtitle en-only" hidden>
             AJUDATOTAL.JE was created for Portuguese and other immigrants living in Jersey
             who feel the weight of everyday life and need a safe space to talk, organise
             their thoughts and find practical strategies for real life.
@@ -674,13 +666,13 @@
 
           <div class="hero-badges">
             <span class="hero-badge pt-only">Foco em imigrantes portugueses</span>
-            <span class="hero-badge en-only">Focus on Portuguese immigrants</span>
+            <span class="hero-badge en-only" hidden>Focus on Portuguese immigrants</span>
 
             <span class="hero-badge pt-only">Sessões em Português ou Inglês</span>
-            <span class="hero-badge en-only">Sessions in English or Portuguese</span>
+            <span class="hero-badge en-only" hidden>Sessions in English or Portuguese</span>
 
             <span class="hero-badge pt-only">Ambiente calmo, confidencial e prático</span>
-            <span class="hero-badge en-only">Calm, confidential and practical</span>
+            <span class="hero-badge en-only" hidden>Calm, confidential and practical</span>
           </div>
 
           <a href="https://www.facebook.com/share/17kCcPG7V1/"
@@ -689,13 +681,13 @@
              class="btn-facebook">
             <span>📘</span>
             <span class="pt-only">Falar pela página de Facebook</span>
-            <span class="en-only">Send a message on Facebook</span>
+            <span class="en-only" hidden>Send a message on Facebook</span>
           </a>
 
           <div class="hero-note pt-only">
             Clica no botão azul para enviar uma mensagem pela página oficial da Ajudatotal no Facebook.
           </div>
-          <div class="hero-note en-only">
+          <div class="hero-note en-only" hidden>
             Click the blue button to send a private message through the official Ajudatotal Facebook page.
           </div>
         </div>
@@ -707,7 +699,7 @@
           <div class="hero-media-pill">
             <span>🧠</span>
             <span class="pt-only">Espaço seguro para falar sem julgamentos.</span>
-            <span class="en-only">A safe space to talk without judgement.</span>
+            <span class="en-only" hidden>A safe space to talk without judgement.</span>
           </div>
         </div>
       </div>
@@ -718,13 +710,13 @@
       <div class="section-heading">
         <h2>
           <span class="pt-only">Para quem é a AJUDATOTAL.JE?</span>
-          <span class="en-only">Who is AJUDATOTAL.JE for?</span>
+          <span class="en-only" hidden>Who is AJUDATOTAL.JE for?</span>
         </h2>
         <p class="pt-only">
           Pessoas que trabalham muito, mudaram de país e estão a sentir o impacto da
           imigração na mente, nas emoções e nas relações.
         </p>
-        <p class="en-only">
+        <p class="en-only" hidden>
           People who work hard, moved to another country and are feeling the impact
           of immigration on their mind, emotions and relationships.
         </p>
@@ -733,16 +725,16 @@
       <div class="cards-3">
         <div class="card">
           <div class="card-label pt-only">Imigrantes em Jersey</div>
-          <div class="card-label en-only">Immigrants in Jersey</div>
+          <div class="card-label en-only" hidden>Immigrants in Jersey</div>
 
           <div class="card-title pt-only">Portugueses e outras nacionalidades</div>
-          <div class="card-title en-only">Portuguese and other nationalities</div>
+          <div class="card-title en-only" hidden>Portuguese and other nationalities</div>
 
           <p class="card-text pt-only">
             Se estás longe da família, tens saudades de casa e ao mesmo tempo tens
             de lidar com trabalho, contas e responsabilidades, este espaço é para ti.
           </p>
-          <p class="card-text en-only">
+          <p class="card-text en-only" hidden>
             If you are far from family, miss home and still have to deal with work,
             bills and responsibilities, this space is for you.
           </p>
@@ -750,16 +742,16 @@
 
         <div class="card">
           <div class="card-label pt-only">Vida real</div>
-          <div class="card-label en-only">Real life</div>
+          <div class="card-label en-only" hidden>Real life</div>
 
           <div class="card-title pt-only">Stress, ansiedade e cansaço</div>
-          <div class="card-title en-only">Stress, anxiety and exhaustion</div>
+          <div class="card-title en-only" hidden>Stress, anxiety and exhaustion</div>
 
           <p class="card-text pt-only">
             Quando a cabeça não pára, o sono falha, ou parece que estás sempre em
             “piloto automático”, as sessões ajudam a pôr tudo em perspetiva.
           </p>
-          <p class="card-text en-only">
+          <p class="card-text en-only" hidden>
             When your mind won’t stop, sleep is not great or you feel on
             “automatic pilot” all the time, sessions help you see things with more clarity.
           </p>
@@ -767,16 +759,16 @@
 
         <div class="card">
           <div class="card-label pt-only">Objetivos & mudança</div>
-          <div class="card-label en-only">Goals & change</div>
+          <div class="card-label en-only" hidden>Goals & change</div>
 
           <div class="card-title pt-only">Queres algo diferente para a tua vida</div>
-          <div class="card-title en-only">You want something different for your life</div>
+          <div class="card-title en-only" hidden>You want something different for your life</div>
 
           <p class="card-text pt-only">
             Tal como um coaching, o foco está em perceber onde estás agora,
             o que queres mudar e que pequenos passos podes começar a dar.
           </p>
-          <p class="card-text en-only">
+          <p class="card-text en-only" hidden>
             Similar to coaching, the focus is on understanding where you are now,
             what you want to change and which small steps you can start taking.
           </p>
@@ -804,13 +796,13 @@
       <div class="section-heading">
         <h2>
           <span class="pt-only">O que podes trabalhar nas sessões</span>
-          <span class="en-only">What you can work on in sessions</span>
+          <span class="en-only" hidden>What you can work on in sessions</span>
         </h2>
         <p class="pt-only">
           O objetivo não é “mudar quem és”, mas sim dar-te mais ferramentas para
           lidar com aquilo que já vives – aqui, agora, em Jersey.
         </p>
-        <p class="en-only">
+        <p class="en-only" hidden>
           The goal is not to “change who you are”, but to give you tools to deal
           better with what you are already living – here and now, in Jersey.
         </p>
@@ -819,16 +811,16 @@
       <div class="cards-3">
         <div class="card">
           <div class="card-label pt-only">Apoio emocional</div>
-          <div class="card-label en-only">Emotional support</div>
+          <div class="card-label en-only" hidden>Emotional support</div>
 
           <div class="card-title pt-only">Ansiedade, stress e momentos difíceis</div>
-          <div class="card-title en-only">Anxiety, stress and difficult moments</div>
+          <div class="card-title en-only" hidden>Anxiety, stress and difficult moments</div>
 
           <p class="card-text pt-only">
             Explorar o que estás a sentir, entender padrões e encontrar estratégias
             concretas para lidar com situações que te deixam em baixo ou bloqueado.
           </p>
-          <p class="card-text en-only">
+          <p class="card-text en-only" hidden>
             Explore what you are feeling, understand patterns and find concrete
             strategies to handle situations that leave you low or stuck.
           </p>
@@ -836,16 +828,16 @@
 
         <div class="card">
           <div class="card-label pt-only">Desenvolvimento pessoal</div>
-          <div class="card-label en-only">Personal development</div>
+          <div class="card-label en-only" hidden>Personal development</div>
 
           <div class="card-title pt-only">Autoestima, foco e clareza</div>
-          <div class="card-title en-only">Self-esteem, focus and clarity</div>
+          <div class="card-title en-only" hidden>Self-esteem, focus and clarity</div>
 
           <p class="card-text pt-only">
             Organizar objetivos, melhorar comunicação, aprender a dizer “não”
             e construir uma vida mais alinhada com aquilo que realmente queres.
           </p>
-          <p class="card-text en-only">
+          <p class="card-text en-only" hidden>
             Organise your goals, improve communication, learn to say “no” and
             build a life that feels closer to what you really want.
           </p>
@@ -853,16 +845,16 @@
 
         <div class="card">
           <div class="card-label pt-only">Imigração</div>
-          <div class="card-label en-only">Immigration</div>
+          <div class="card-label en-only" hidden>Immigration</div>
 
           <div class="card-title pt-only">Viver entre dois lugares</div>
-          <div class="card-title en-only">Living between two places</div>
+          <div class="card-title en-only" hidden>Living between two places</div>
 
           <p class="card-text pt-only">
             Falar sobre saudades, adaptação à cultura local, relações à distância
             e decisões importantes: ficar, voltar, mudar de trabalho ou área.
           </p>
-          <p class="card-text en-only">
+          <p class="card-text en-only" hidden>
             Talk about homesickness, adapting to the local culture, long-distance
             relationships and big decisions: stay, return, change job or career.
           </p>
@@ -875,13 +867,13 @@
       <div class="section-heading">
         <h2>
           <span class="pt-only">Quem está por trás da AJUDATOTAL.JE</span>
-          <span class="en-only">Who is behind AJUDATOTAL.JE</span>
+          <span class="en-only" hidden>Who is behind AJUDATOTAL.JE</span>
         </h2>
         <p class="pt-only">
           Um projeto pensado para ser humano, próximo e realista – com base em
           anos de experiência a apoiar pessoas em Jersey.
         </p>
-        <p class="en-only">
+        <p class="en-only" hidden>
           A project designed to be human, close and realistic – based on years
           of experience supporting people in Jersey.
         </p>
@@ -889,13 +881,12 @@
 
       <div class="about-grid">
         <div class="about-card">
-          <div class="about-title pt-only">Luís Pereira</div>
-          <div class="about-title en-only">Luís Pereira</div>
+          <div class="about-title">Luís Pereira</div>
 
           <div class="about-sub pt-only">
             Conselheiro voluntário em organizações de saúde mental em Jersey.
           </div>
-          <div class="about-sub en-only">
+          <div class="about-sub en-only" hidden>
             Volunteer counsellor in mental health organisations in Jersey.
           </div>
 
@@ -904,7 +895,7 @@
             com pessoas que lidam com ansiedade, depressão, desafios familiares,
             stress no trabalho e questões ligadas ao neurodesenvolvimento.
           </p>
-          <p class="card-text en-only">
+          <p class="card-text en-only" hidden>
             Luís lives in Jersey and, over the last years, has worked with people
             dealing with anxiety, depression, family challenges, work-related stress
             and neurodevelopmental conditions.
@@ -914,14 +905,14 @@
             <li class="pt-only">
               Conselheiro voluntário na <strong>Autism Jersey</strong> desde 2019 (6 anos).
             </li>
-            <li class="en-only">
+            <li class="en-only" hidden>
               Volunteer counsellor at <strong>Autism Jersey</strong> since 2019 (6 years).
             </li>
 
             <li class="pt-only">
               Conselheiro voluntário na <strong>Mind Jersey</strong> desde 2020 (5 anos).
             </li>
-            <li class="en-only">
+            <li class="en-only" hidden>
               Volunteer counsellor at <strong>Mind Jersey</strong> since 2020 (5 years).
             </li>
 
@@ -929,7 +920,7 @@
               Experiência com adultos, jovens adultos e famílias em contextos
               de saúde mental e bem-estar.
             </li>
-            <li class="en-only">
+            <li class="en-only" hidden>
               Experience with adults, young adults and families in mental health
               and wellbeing contexts.
             </li>
@@ -938,7 +929,7 @@
               Sessões conduzidas num estilo calmo, direto e colaborativo – sempre
               com foco em objetivos práticos.
             </li>
-            <li class="en-only">
+            <li class="en-only" hidden>
               Sessions held in a calm, direct and collaborative style – always
               with a focus on practical goals.
             </li>
@@ -946,26 +937,26 @@
 
           <div style="margin-top:12px;">
             <span class="pill pt-only">Português · Língua nativa</span>
-            <span class="pill en-only">Portuguese · Native speaker</span>
+            <span class="pill en-only" hidden>Portuguese · Native speaker</span>
 
             <span class="pill pt-only">Inglês · Fluente profissional</span>
-            <span class="pill en-only">English · Full professional proficiency</span>
+            <span class="pill en-only" hidden>English · Full professional proficiency</span>
           </div>
         </div>
 
         <div class="card">
           <div class="card-label pt-only">Como são as sessões?</div>
-          <div class="card-label en-only">What are sessions like?</div>
+          <div class="card-label en-only" hidden>What are sessions like?</div>
 
           <div class="card-title pt-only">Conversas estruturadas, mas humanas</div>
-          <div class="card-title en-only">Structured but human conversations</div>
+          <div class="card-title en-only" hidden>Structured but human conversations</div>
 
           <p class="card-text pt-only">
             Cada sessão é organizada para que tenhas espaço para falar, mas também
             para sair com algo concreto: uma ideia mais clara, uma decisão, um plano
             ou simplesmente um pouco mais de calma para o próximo passo.
           </p>
-          <p class="card-text en-only">
+          <p class="card-text en-only" hidden>
             Each session is organised so that you have space to talk, but also leave
             with something concrete: a clearer idea, a decision, a plan or simply a
             little more calm for the next step.
@@ -979,13 +970,13 @@
       <div class="section-heading">
         <h2>
           <span class="pt-only">Como funciona na prática</span>
-          <span class="en-only">How it works in practice</span>
+          <span class="en-only" hidden>How it works in practice</span>
         </h2>
         <p class="pt-only">
           Tudo começa com uma mensagem simples. A partir daí, combinamos o que faz
           mais sentido para ti neste momento.
         </p>
-        <p class="en-only">
+        <p class="en-only" hidden>
           Everything starts with a simple message. From there we agree on what makes
           the most sense for you right now.
         </p>
@@ -995,13 +986,13 @@
         <div class="step">
           <div class="step-number">1</div>
           <div class="step-title pt-only">Envia uma mensagem pelo Facebook</div>
-          <div class="step-title en-only">Send a message on Facebook</div>
+          <div class="step-title en-only" hidden>Send a message on Facebook</div>
 
           <p class="step-text pt-only">
             Clica no botão azul em qualquer parte deste site e escreve, de forma
             simples, o que te está a preocupar neste momento.
           </p>
-          <p class="step-text en-only">
+          <p class="step-text en-only" hidden>
             Click the blue button anywhere on this site and write, in simple words,
             what is worrying you at the moment.
           </p>
@@ -1010,13 +1001,13 @@
         <div class="step">
           <div class="step-number">2</div>
           <div class="step-title pt-only">Recebes resposta com opções</div>
-          <div class="step-title en-only">You receive a reply with options</div>
+          <div class="step-title en-only" hidden>You receive a reply with options</div>
 
           <p class="step-text pt-only">
             Recebes uma resposta com opções de horários, formato (online ou
             presencial, quando possível) e valores claros por sessão.
           </p>
-          <p class="step-text en-only">
+          <p class="step-text en-only" hidden>
             You receive a reply with available times, format (online or in-person,
             when possible) and clear session fees.
           </p>
@@ -1025,13 +1016,13 @@
         <div class="step">
           <div class="step-number">3</div>
           <div class="step-title pt-only">Começamos a trabalhar juntos</div>
-          <div class="step-title en-only">We start working together</div>
+          <div class="step-title en-only" hidden>We start working together</div>
 
           <p class="step-text pt-only">
             Em cada encontro, revemos o que está a acontecer, definimos pequenos
             objetivos e avaliamos o que está a resultar melhor para ti.
           </p>
-          <p class="step-text en-only">
+          <p class="step-text en-only" hidden>
             In each meeting we review what is happening, define small goals and look
             at what is working best for you.
           </p>
@@ -1044,14 +1035,14 @@
       <div class="contact-strip">
         <div class="contact-text">
           <h3 class="pt-only">Queres saber se a AJUDATOTAL.JE é para ti?</h3>
-          <h3 class="en-only">Not sure if AJUDATOTAL.JE is for you?</h3>
+          <h3 class="en-only" hidden>Not sure if AJUDATOTAL.JE is for you?</h3>
 
           <p class="pt-only">
             Podes enviar uma mensagem sem compromisso pela página de Facebook.
             Explica, em poucas frases, o que te está a preocupar e recebes uma
             resposta com os próximos passos possíveis.
           </p>
-          <p class="en-only">
+          <p class="en-only" hidden>
             You can send a message with no commitment through the Facebook page.
             Explain in a few sentences what is on your mind and you will receive a
             reply with possible next steps.
@@ -1060,7 +1051,7 @@
           <div class="contact-note pt-only">
             Não há formulários complicados, apenas uma conversa clara e humana.
           </div>
-          <div class="contact-note en-only">
+          <div class="contact-note en-only" hidden>
             No complicated forms, just a clear and human conversation.
           </div>
         </div>
@@ -1072,7 +1063,7 @@
              class="btn-facebook">
             <span>📘</span>
             <span class="pt-only">Enviar mensagem no Facebook</span>
-            <span class="en-only">Send a message on Facebook</span>
+            <span class="en-only" hidden>Send a message on Facebook</span>
           </a>
         </div>
       </div>
@@ -1086,7 +1077,7 @@
     <div class="pt-only">
       Apoio emocional e desenvolvimento pessoal para imigrantes.
     </div>
-    <div class="en-only">
+    <div class="en-only" hidden>
       Emotional support and personal development for immigrants.
     </div>
   </footer>
@@ -1096,27 +1087,27 @@
   // ano automático
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // toggle de idioma PT / EN
-  const bodyEl = document.body;
-  const htmlEl = document.documentElement;
   const toggleBtn = document.getElementById('langToggle');
+  const ptEls = document.querySelectorAll('.pt-only');
+  const enEls = document.querySelectorAll('.en-only');
 
   function setLang(lang) {
-    bodyEl.setAttribute('data-lang', lang);
-    htmlEl.setAttribute('lang', lang);
-    // botão mostra o idioma para o qual vai mudar
-    toggleBtn.innerHTML = lang === 'pt'
-      ? '<span>🌐</span>EN'
-      : '<span>🌐</span>PT';
+    const isPt = lang === 'pt';
+
+    ptEls.forEach(el => { el.hidden = !isPt; });
+    enEls.forEach(el => { el.hidden = isPt; });
+
+    document.documentElement.lang = lang;
+    toggleBtn.innerHTML = isPt ? '<span>🌐</span> EN' : '<span>🌐</span> PT';
   }
 
   toggleBtn.addEventListener('click', () => {
-    const current = bodyEl.getAttribute('data-lang') || 'pt';
+    const current = document.documentElement.lang || 'pt';
     const next = current === 'pt' ? 'en' : 'pt';
     setLang(next);
   });
 
-  // linguagem inicial
+  // idioma inicial: PT
   setLang('pt');
 </script>
 
